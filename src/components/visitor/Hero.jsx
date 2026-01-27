@@ -16,9 +16,9 @@ const Hero = () => {
           with a fast, digital VMS.
         </p>
 
-        {/* Buttons */}
-        <div className="flex justify-center gap-4 mb-10 md:mb-20">
-          <button className="bg-[#b455f2] hover:bg-[#a145e6] text-white font-semibold px-8 py-3 rounded-xl transition">
+        {/* CTA BUTTONS */}
+        <div className="flex flex-row items-center justify-center gap-6 mb-20">
+          <button className="bg-[#C147E9] hover:bg-[#a145e6] text-white font-['Poppins'] font-semibold text-[20px] leading-[28px] tracking-[-0.2px] px-[30px] py-[14px] rounded-xl shadow-[0px_1px_5px_rgba(0,0,0,0.05)] transition      ">
             Try for Free
           </button>
 
@@ -32,7 +32,7 @@ const Hero = () => {
           <img
             src="/assets/images/visitor/1.png"
             alt="Visitor Management Dashboard"
-            className="w-full rounded-[24px] shadow-2xl block"
+            className="w-full rounded-t-[24px] rounded-b-none  block"
           />
         </div>
       </div>

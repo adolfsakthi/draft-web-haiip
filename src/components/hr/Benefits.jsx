@@ -3,7 +3,7 @@ import React from 'react';
 // Benefits grid section (exact flat grid with dividers)
 export default function Benefits() {
     return (
-        <section className="w-full bg-white py-20">
+        <section className="w-full bg-white py-10 md:py-20">
             <div className="max-w-7xl mx-auto px-6">
 
                 <div className="grid grid-cols-1 md:grid-cols-3  border-[#d9468f]">
@@ -37,11 +37,13 @@ export default function Benefits() {
                         <div
                             key={index}
                             className={`
-                px-10 py-14 text-center
-                border-r border-b border-[#d9468f]
+                px-6 py-8 md:px-10 md:py-14 text-center
+                border-b border-[#d9468f] md:border-r
                 md:[&:nth-child(3n)]:border-r-0
                 md:[&:nth-last-child(-n+3)]:border-b-0
-              `}
+                last:border-b-0
+              `
+                            }
                         >
                             <h3 className="text-lg font-semibold text-black mb-4 leading-snug">
                                 {item.title}

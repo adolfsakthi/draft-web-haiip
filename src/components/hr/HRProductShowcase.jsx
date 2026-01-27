@@ -11,8 +11,8 @@ export default function HRProductShowcase({
     fullWidthImage
 }) {
     return (
-        <section className="w-full bg-[#FDF3EA] py-24">
-            <div className="max-w-7xl mx-auto px-6 flex flex-col lg:flex-row items-start gap-16">
+        <section className="w-full bg-[#FDF3EA] py-10 md:py-24">
+            <div className="max-w-7xl mx-auto px-6 flex flex-col lg:flex-row items-start gap-8 md:gap-16">
 
                 {/* IMAGE/MOCKUP COLUMN (DASHBOARD) */}
                 {/* If reversed, it goes to order 2 on LG screens. If not reversed, order 1. */}
@@ -22,7 +22,7 @@ export default function HRProductShowcase({
         */}
 
                 <div className={`lg:w-2/3 w-full flex justify-center ${isReversed ? 'lg:order-1' : 'lg:order-2'}`}>
-                    <div className="bg-black rounded-[44px] p-5 shadow-2xl w-full max-w-5xl">
+                    <div className="bg-black rounded-2xl md:rounded-[44px] p-2 md:p-5 shadow-2xl w-full max-w-5xl">
                         <img
                             src={image}
                             alt={title || "Dashboard Preview"}
