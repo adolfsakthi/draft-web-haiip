@@ -29,23 +29,31 @@ const benefits = [
 
 export const Benefits = () => {
     return (
-        <section className="py-24 bg-white">
-            <div className="max-w-7xl mx-auto px-4 relative">
+        <section className="bg-white flex justify-center">
+            <div
+                className="relative"
+                style={{
+                    width: '1438px',
+                    height: '544px',
+                    padding: '80px',
+                    boxSizing: 'border-box',
+                }}
+            >
 
                 {/* GRID WRAPPER */}
-                <div className="relative grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
+                <div className="relative grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 h-full content-center">
 
                     {/* VERTICAL DIVIDERS (LG only) */}
-                    <div className="hidden lg:block absolute top-16 bottom-16 left-1/3 gradient-divider-vertical" />
-                    <div className="hidden lg:block absolute top-16 bottom-16 left-2/3 gradient-divider-vertical" />
+                    <div className="hidden lg:block absolute top-[10%] bottom-[10%] left-1/3 gradient-divider-vertical" />
+                    <div className="hidden lg:block absolute top-[10%] bottom-[10%] left-2/3 gradient-divider-vertical" />
 
                     {/* HORIZONTAL DIVIDER (LG only, between rows) */}
-                    <div className="hidden lg:block absolute left-16 right-16 top-1/2 gradient-divider-horizontal" />
+                    <div className="hidden lg:block absolute left-[5%] right-[5%] top-1/2 gradient-divider-horizontal" />
 
                     {benefits.map((item, idx) => (
                         <div
                             key={idx}
-                            className="p-10 flex flex-col space-y-3"
+                            className="px-8 py-6 flex flex-col space-y-3 justify-center"
                         >
                             <h3 className="text-xl font-bold text-gray-900 leading-tight">
                                 {item.title}

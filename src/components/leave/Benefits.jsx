@@ -1,58 +1,102 @@
-// Benefits grid section (exact flat grid with dividers)
+// Benefits grid section (Exact Figma Design)
 export default function Benefits() {
+  const benefits = [
+    {
+      title: "Simplify leave requests and\napprovals with ease.",
+      desc: "Employees can apply for leave instantly, while managers review and approve with just one click.",
+    },
+    {
+      title: "Generate custom leave reports for\nbetter insights.",
+      desc: "Access detailed leave summaries, department-wise reports, and trend analytics tailored to your needs.",
+    },
+    {
+      title: "Customize leave policies to fit your\norganization.",
+      desc: "Set yearly limits, carry-forward rules, holidays,\nand leave types to match your company\npolicies perfectly.",
+    },
+    {
+      title: "Automate leave calculations for\nerror-free management.",
+      desc: "Auto-calculate entitlements, balances,\naccruals, and deductions without manual\nefforts or mistakes.",
+    },
+    {
+      title: "Secure and compliant employee\nleave data.",
+      desc: "Your data is protected with enterprise-grade security and strict access-control management.",
+    },
+    {
+      title: "Get 24/7 support whenever you need\nit",
+      desc: "Our HR support team is available around the clock via chat and call to assist with any LMS queries.",
+    },
+  ];
+
   return (
-    <section className="w-full bg-white py-20">
-      <div className="max-w-7xl mx-auto px-6">
+    <section className="w-full bg-white flex justify-center">
+      {/* Frame 1984079281 */}
+      <div className="relative w-[1440px] h-[544px] flex flex-col items-start p-[80px] isolate bg-white">
+        {/* Grid wrapper = 1280x416 */}
+        <div className="relative w-[1280px] h-[416px] flex flex-col">
+          
+          {/* Row 1 */}
+          <div className="flex flex-row items-center w-[1280px] h-[192px]">
+            {benefits.slice(0, 3).map((item, index) => (
+              <div
+                key={index}
+                className="flex flex-col items-center p-[24px] gap-[24px] w-[426px] h-[192px]"
+              >
+                <div className="flex flex-col items-center gap-[12px] w-[378px] h-[144px]">
+                  <h3 className="font-['Poppins'] font-medium text-[20px] leading-[30px] text-center text-black whitespace-pre-line">
+                    {item.title}
+                  </h3>
+                  <p className="font-['Poppins'] font-normal text-[16px] leading-[24px] text-center text-[#718096] whitespace-pre-line">
+                    {item.desc}
+                  </p>
+                </div>
+              </div>
+            ))}
+          </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-3  border-[#d9468f]">
+          {/* Row 2 */}
+          <div className="flex flex-row items-start w-[1280px] h-[192px]">
+            {benefits.slice(3, 6).map((item, index) => (
+              <div
+                key={index}
+                className="flex flex-col items-center p-[24px] gap-[24px] w-[426px] h-[192px]"
+              >
+                <div className="flex flex-col items-center gap-[12px] w-[378px] h-[144px]">
+                  <h3 className="font-['Poppins'] font-medium text-[20px] leading-[30px] text-center text-black whitespace-pre-line">
+                    {item.title}
+                  </h3>
+                  <p className="font-['Poppins'] font-normal text-[16px] leading-[24px] text-center text-[#718096] whitespace-pre-line">
+                    {item.desc}
+                  </p>
+                </div>
+              </div>
+            ))}
+          </div>
 
-          {[
-            {
-              title: "Simplify leave requests and approvals with ease.",
-              desc: "Employees can apply for leave instantly, while managers review and approve with just one click.",
-            },
-            {
-              title: "Generate custom leave reports for better insights.",
-              desc: "Access detailed leave summaries, department-wise reports, and trend analytics tailored to your needs.",
-            },
-            {
-              title: "Customize leave policies to fit your organization.",
-              desc: "Set yearly limits, carry-forward rules, holidays, and leave types to match your company policies perfectly.",
-            },
-            {
-              title: "Automate leave calculations for error-free management.",
-              desc: "Auto-calculate entitlements, balances, accruals, and deductions without manual efforts or mistakes.",
-            },
-            {
-              title: "Secure and compliant employee leave data.",
-              desc: "Your data is protected with enterprise-grade security and strict access-control management.",
-            },
-            {
-              title: "Get 24/7 support whenever you need it.",
-              desc: "Our HR support team is available around the clock via chat and call to assist with any LMS queries.",
-            },
-          ].map((item, index) => (
-            <div
-              key={index}
-              className={`
-                px-10 py-14 text-center
-                border-r border-b border-[#d9468f]
-                md:[&:nth-child(3n)]:border-r-0
-                md:[&:nth-last-child(-n+3)]:border-b-0
-              `}
-            >
-              <h3 className="text-lg font-semibold text-black mb-4 leading-snug">
-                {item.title}
-              </h3>
+          {/* ✅ Vertical Divider Line 1 (Rectangle 26) */}
+          <div
+  className="absolute w-[1px] h-[295px] left-[426px] top-1/2 -translate-y-1/2"
+  style={{
+    background: "linear-gradient(225deg, #F76680 0%, #57007B 100%)",
+  }}
+/>
 
-              <p className="text-sm text-[#64748b] leading-relaxed max-w-md mx-auto">
-                {item.desc}
-              </p>
-            </div>
-          ))}
+          {/* ✅ Vertical Divider Line 2 (Rectangle 27) */}
+          <div
+  className="absolute w-[1px] h-[295px] left-[852px] top-1/2 -translate-y-1/2"
+  style={{
+    background: "linear-gradient(225deg, #F76680 0%, #57007B 100%)",
+  }}
+/>
+
+          {/* ✅ Horizontal Divider Line (Rectangle 23) */}
+          <div
+            className="absolute w-[1280px] h-[1px] left-0 top-1/2 -translate-y-1/2"
+            style={{
+              background: "linear-gradient(225deg, #F76680 0%, #57007B 100%)",
+            }}
+          />
 
         </div>
-
       </div>
     </section>
   );
