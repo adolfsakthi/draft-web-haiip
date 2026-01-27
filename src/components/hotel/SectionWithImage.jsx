@@ -1,66 +1,112 @@
 import React from "react"
-import character from "../../assets/images/hotel/character.png"
-import character2 from "../../assets/images/hotel/character2.jpeg"
-import character3 from "../../assets/images/hotel/character3.jpeg"
-
-const characters = [character, character2, character3]
 
 const SectionWithImage = ({
     title,
     quote,
     image,
-    index,
-    isReversed = false,
-    buttonText = "EXPLORE",
+    overlayImage, // inventory-only modal
+    character,
+    isReversed = false
 }) => {
-    const characterImage = characters[index % characters.length]
+    const hasOverlay = Boolean(overlayImage)
 
     return (
-        <section className="bg-[#fff9e6] py-28">
-            <div className="max-w-[1600px] mx-auto px-6">
-                <div className="grid grid-cols-1 lg:grid-cols-3 gap-20">
+        <section className="py-20">
+            <div className="max-w-[1280px] mx-auto px-6">
+                <div className="grid grid-cols-1 lg:grid-cols-4 gap-6">
 
                     {/* CONTENT */}
                     <div
-                        className={`flex flex-col h-full justify-start relative 
-            ${isReversed ? "lg:order-2" : "lg:order-1"} lg:col-span-1`}
+                        className={`
+                            flex flex-col
+                            ${isReversed ? "lg:order-2" : "lg:order-1"}
+                            lg:col-span-1
+                        `}
                     >
-                        <h3 className="text-3xl font-bold text-yellow-600 mb-6 flex items-center gap-2">
+                        <h3 className="mb-6 text-yellow-600 font-semibold text-lg">
                             {title}
                         </h3>
 
-                        <div className="border-2 border-dashed border-yellow-500 rounded-2xl p-6 text-gray-700 text-lg leading-relaxed mb-8">
-                            <span className="text-5xl text-yellow-500 leading-none block mb-2">“</span>
-                            {quote}
+                        {/* QUOTE */}
+                        <div className="relative mb-6">
+                            <span className="absolute -top-3 left-6 text-yellow-400 bg-[#fff9e6] px-1 text-[48px] leading-none">
+                                “
+                            </span>
+                            <div className="border-2 border-dashed border-yellow-400 rounded-2xl p-6 pt-8 italic text-gray-600">
+                                {quote}
+                            </div>
                         </div>
 
-                        <button className="bg-yellow-500 text-white px-8 py-4 rounded-xl text-lg font-semibold shadow-md hover:bg-yellow-600 transition w-fit">
-                            {buttonText}
+                        {/* EXPLORE */}
+                        <button
+                            className="
+                                w-fit mb-10 px-6 py-2
+                                bg-[#EAB308] text-white font-bold text-sm
+                                tracking-widest rounded-lg
+                                border-2 border-black
+                                shadow-[3px_3px_0_#000]
+                                hover:translate-x-[1px]
+                                hover:translate-y-[1px]
+                                hover:shadow-[1px_1px_0_#000]
+                                transition
+                            "
+                        >
+                            EXPLORE
                         </button>
 
-                        {/* CHARACTER (AUTO-ROTATED) */}
-                        <div
-                            className={`mt-auto pt-10 hidden lg:block ${isReversed ? "self-end" : "self-start"
-                                }`}
-                        >
-                            <img
-                                src={characterImage}
-                                alt="Character"
-                                className="w-[180px] h-auto"
-                            />
-                        </div>
+                        {/* CHARACTER */}
+                        {character && (
+                            <div className={`hidden lg:block ${isReversed ? "self-end" : "self-start"}`}>
+                                <img src={character} alt="" className="w-[180px]" />
+                            </div>
+                        )}
                     </div>
 
-                    {/* IMAGE */}
+                    {/* IMAGE FRAME */}
                     <div
-                        className={`${isReversed ? "lg:order-1" : "lg:order-2"
-                            } lg:col-span-2 flex justify-center items-start`}
+                        className={`
+                            ${isReversed ? "lg:order-1" : "lg:order-2"}
+                            lg:col-span-3 flex justify-center
+                        `}
                     >
-                        <img
-                            src={image}
-                            alt={title}
-                            className="w-full max-w-[1100px] min-h-[500px] object-cover rounded-3xl shadow-2xl"
-                        />
+                        <div className="relative border-[20px] border-black rounded-[48px] overflow-hidden shadow-2xl w-full max-w-[978px] aspect-[978/639]">
+
+                            {/* MAIN IMAGE */}
+                            <img
+                                src={image}
+                                alt={title}
+                                className={`w-full h-full object-cover ${
+                                    hasOverlay ? "opacity-60" : ""
+                                }`}
+                            />
+
+                            {/* DARK DIM LAYER (Inventory only) */}
+                            {hasOverlay && (
+                                <div className="absolute inset-0 bg-black/30" />
+                            )}
+
+                            {/* FLOATING MODAL (Inventory only) */}
+                            {hasOverlay && (
+                                <div
+                                    className="
+                                        absolute top-1/2 left-1/2
+                                        -translate-x-1/2 -translate-y-1/2
+                                        bg-white rounded-2xl
+                                        shadow-2xl
+                                        p-4
+                                        max-w-[420px]
+                                        w-[85%]
+                                    "
+                                >
+                                    <img
+                                        src={overlayImage}
+                                        alt="Inventory Modal"
+                                        className="w-full h-auto rounded-xl"
+                                    />
+                                </div>
+                            )}
+
+                        </div>
                     </div>
 
                 </div>

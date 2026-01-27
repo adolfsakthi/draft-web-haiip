@@ -61,12 +61,13 @@ export const Header = () => {
                 <nav className="hidden md:flex items-center space-x-10">
                     <NavLink
                         to="/"
-                        className={({ isActive }) => `text-[15px] font-semibold transition-colors ${isActive ? 'text-black' : 'text-gray-500 hover:text-black'}`}
+                        end
+                        className={({ isActive }) => `text-sm md:text-[15px] font-semibold transition-colors ${isActive ? 'nav-link-active' : 'text-gray-500 hover:text-black'}`}
                     >
                         Home
                     </NavLink>
 
-                    <a href="/#services" className="text-[15px] font-medium text-gray-500 hover:text-black transition-colors">
+                    <a href="/#services" className="text-sm md:text-[15px] font-medium text-gray-500 hover:text-black transition-colors">
                         Services
                     </a>
 
@@ -74,7 +75,7 @@ export const Header = () => {
                     <div className="relative" ref={dropdownRef}>
                         <button
                             onClick={() => setIsProductOpen(!isProductOpen)}
-                            className={`flex items-center text-[15px] font-medium transition-colors focus:outline-none ${isProductOpen ? 'text-black' : 'text-gray-500 hover:text-black'}`}
+                            className={`flex items-center text-sm md:text-[15px] font-medium transition-colors focus:outline-none ${isProductOpen ? 'nav-link-active' : 'text-gray-500 hover:text-black'}`}
                         >
                             Products
                             <ChevronDown className={`ml-1 h-4 w-4 transition-transform duration-200 ${isProductOpen ? 'rotate-180' : ''}`} />
@@ -119,22 +120,22 @@ export const Header = () => {
                         )}
                     </div>
 
-                    <Link to="/about" className="text-[15px] font-medium text-gray-500 hover:text-black transition-colors">
+                    <NavLink to="/about" className={({ isActive }) => `text-sm md:text-[15px] font-medium transition-colors ${isActive ? 'nav-link-active' : 'text-gray-500 hover:text-black'}`}>
                         About
-                    </Link>
+                    </NavLink>
 
-                    <Link to="/privacy-policy" className="text-[15px] font-medium text-gray-500 hover:text-black transition-colors">
+                    <NavLink to="/contact" className={({ isActive }) => `text-sm md:text-[15px] font-medium transition-colors ${isActive ? 'nav-link-active' : 'text-gray-500 hover:text-black'}`}>
                         Contact
-                    </Link>
+                    </NavLink>
                 </nav>
 
                 {/* Right Side: Phone & CTA */}
                 <div className="hidden md:flex items-center space-x-6">
-                    <a href="tel:+919036122890" className="flex items-center text-gray-700 font-semibold text-[15px] hover:text-blue-700 transition-colors">
+                    <a href="tel:+919036122890" className="flex items-center text-gray-700 font-semibold text-sm md:text-[15px] hover:text-blue-700 transition-colors">
                         <Phone className="w-4 h-4 mr-2" />
                         +91 9036122890
                     </a>
-                    <button className="bg-[#0f172a] text-white px-6 py-2.5 rounded-lg text-[15px] font-medium hover:bg-gray-800 transition-all shadow-md active:scale-95">
+                    <button className="bg-[#0f172a] text-white px-6 py-2.5 rounded-lg text-sm md:text-[15px] font-medium hover:bg-gray-800 transition-all shadow-md active:scale-95">
                         Request a demo
                     </button>
                 </div>

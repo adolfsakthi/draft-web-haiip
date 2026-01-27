@@ -21,99 +21,98 @@ export default function Testimonials() {
   ];
 
   return (
-    <section className="relative py-24 bg-white overflow-hidden">
+    <section className="relative py-16 md:py-24 bg-white overflow-hidden">
 
       {/* HEADER */}
-      <div className="max-w-[1400px] mx-auto flex justify-between items-start px-10">
+      <div className="w-full max-w-[1400px] mx-auto flex flex-col lg:flex-row justify-between items-start px-6 lg:px-10 gap-8 lg:gap-0">
 
-       <h2 className="flex items-center gap-4 text-5xl font-semibold text-black" style={{ fontFamily: 'Orbitron, sans-serif' }}>
-  <img
-    src="/Star.png"
-    alt="star"
-    className="w-14 h-14 object-contain"
-  />
-  What Our Clients Say
-</h2>
-
-
-       <div className="flex items-start gap-4 max-w-[420px]">
-
-  {/* Vertical Gradient Accent Line */}
-  <div className="w-[3px] h-[64px] bg-gradient-to-b from-[#cf3d9c] to-[#5b38c6] rounded-full" />
-
-  {/* Gradient Subtitle Text */}
-  <p className="
-    text-lg 
-    italic 
-    font-medium
-    leading-relaxed
-    bg-gradient-to-b 
-    from-[#cf3d9c] 
-    via-[#b44bb2] 
-    to-[#5b38c6]
-    bg-clip-text 
-    text-transparent
-  ">
-    Real experiences — trusted outcomes from our integrated projects.
-  </p>
-
-</div>
-{/* LEFT CORNER DECOR IMAGE */}
-<img
-  src="/element.png"
-  alt=""
-  className="
-    absolute top-[320px] left-[-40px]
-    w-[260px]
-    object-contain
-    pointer-events-none
-    z-0
-  "
-/>
+        <h2 className="flex items-center gap-4 text-3xl md:text-5xl font-semibold text-black" style={{ fontFamily: 'Orbitron, sans-serif' }}>
+          <img
+            src="/Star.png"
+            alt="star"
+            className="w-10 h-10 lg:w-14 lg:h-14 object-contain"
+          />
+          What Our Clients Say
+        </h2>
 
 
-       
+        <div className="flex items-start gap-4 max-w-full lg:max-w-[420px]">
+
+          {/* Vertical Gradient Accent Line */}
+          <div className="w-[3px] h-[50px] md:h-[64px] bg-gradient-to-b from-[#cf3d9c] to-[#5b38c6] rounded-full shrink-0" />
+
+          {/* Gradient Subtitle Text */}
+          <p className="
+            text-base md:text-lg 
+            italic 
+            font-medium
+            leading-relaxed
+            bg-gradient-to-b 
+            from-[#cf3d9c] 
+            via-[#b44bb2] 
+            to-[#5b38c6]
+            bg-clip-text 
+            text-transparent
+          ">
+            Real experiences — trusted outcomes from our integrated projects.
+          </p>
+
+        </div>
+        {/* LEFT CORNER DECOR IMAGE (Hidden on mobile) */}
+        <img
+          src="/element.png"
+          alt=""
+          className="
+            hidden lg:block
+            absolute top-[320px] left-[-40px]
+            w-[260px]
+            object-contain
+            pointer-events-none
+            z-0
+          "
+        />
 
       </div>
 
       {/* CARDS */}
-      <div className="mt-24 flex justify-center gap-23 relative">
+      <div className="mt-12 md:mt-24 flex flex-col lg:flex-row justify-center items-center gap-10 lg:gap-23 relative px-4">
 
         {testimonials.map((item, idx) => (
           <div
             key={idx}
             className={`
-              relative w-[420px] h-[360px]
-              bg-white rounded-[60px]
-              px-10 py-12
-              shadow-[0_40px_120px_rgba(0,0,0,0.05)]
-              ${idx === 0 ? "-rotate-6" : ""}
-              ${idx === 2 ? "rotate-6" : ""}
+              relative w-full max-w-[420px] lg:w-[420px] min-h-[360px]
+              bg-white rounded-[40px] md:rounded-[60px]
+              px-8 py-10 md:px-10 md:py-12
+              shadow-[0_20px_60px_rgba(0,0,0,0.08)]
+              border border-gray-50
+              ${idx === 0 ? "lg:-rotate-6" : ""}
+              ${idx === 2 ? "lg:rotate-6" : ""}
             `}
           >
 
             {/* AVATAR */}
             <div className="flex items-center gap-4 mb-6">
 
-            <div className="relative w-16 h-16 rounded-full bg-gradient-to-tr from-pink-500 to-purple-600 p-[3px] overflow-hidden">
+              <div className="relative w-16 h-16 rounded-full bg-gradient-to-tr from-pink-500 to-purple-600 p-[3px] overflow-hidden shrink-0">
 
-  {item.image ? (
-    <img
-      src={item.image}
-      alt={item.name}
-      className="w-full h-full rounded-full object-cover bg-white"
-      onError={(e) => {
-        e.target.style.display = "none";
-      }}
-    />
-  ) : null}
+                {item.image ? (
+                  <img
+                    src={item.image}
+                    alt={item.name}
+                    className="w-full h-full rounded-full object-cover bg-white"
+                    onError={(e) => {
+                      e.target.style.display = "none";
+                    }}
+                  />
+                ) : null}
 
-  {/* FALLBACK HUMAN ICON */}
-  <div className="absolute inset-0 flex items-center justify-center bg-white rounded-full text-3xl text-gray-400">
-    👤
-  </div>
+                {/* FALLBACK HUMAN ICON */}
+                <div className="absolute inset-0 flex items-center justify-center bg-white rounded-full text-3xl text-gray-400">
+                  👤
+                </div>
 
-</div>
+              </div>
 
 
               <div>

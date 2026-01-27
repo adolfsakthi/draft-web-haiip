@@ -21,14 +21,17 @@ const SolutionCard = ({ title, desc, align = "left" }) => (
 
 const SoftwareSolutions = () => {
     return (
-        <section className="relative py-20 lg:py-32 bg-[#f8fbff] overflow-hidden flex justify-center items-center min-h-[900px]">
+        <section
+            className="relative py-20 lg:py-32 bg-[#f8fbff] overflow-hidden flex justify-center items-center mix-blend-normal"
+            style={{ minHeight: '872px', fontFamily: "'Poppins', sans-serif" }}
+        >
 
             {/* BACKGROUND CONCENTRIC CIRCLES IMAGE */}
             <div className="absolute inset-0 flex items-center justify-center z-0 pointer-events-none">
                 <img
                     src={img17}
                     alt="Background Pattern"
-                    className="w-[1000px] h-auto object-contain opacity-100" // Adjust size as needed
+                    className="w-[1000px] h-auto object-contain opacity-100"
                 />
             </div>
 

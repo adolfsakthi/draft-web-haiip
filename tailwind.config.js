@@ -12,7 +12,9 @@ export default {
         dark: '#0f172a',
       },
       fontFamily: {
-        sans: ['Inter', 'system-ui', 'sans-serif'],
+        sans: ['Poppins', 'Inter', 'system-ui', 'sans-serif'],
+        poppins: ['Poppins', 'sans-serif'],
+        zen: ['"Zen Dots"', 'sans-serif'],
       }
     },
   },

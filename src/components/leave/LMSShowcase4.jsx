@@ -1,54 +1,139 @@
-// Fourth dashboard block: Reports (image-accurate)
+/// Fourth dashboard block: Reports (image-accurate)
 export default function LMSShowcase4() {
   return (
-    <section className="w-full bg-[#eefdff] py-20">
-      <div className="max-w-7xl mx-auto px-6 flex flex-col lg:flex-row items-start gap-12">
-
-        {/* LEFT: Tablet-style Reports dashboard */}
-        <div className="lg:w-2/3 w-full flex justify-center order-2 lg:order-1">
-          <div className="bg-black rounded-[36px] p-4 shadow-2xl w-full max-w-4xl">
+    <section className="w-full bg-[#eefdff] py-8 flex justify-center">
+      <div
+        style={{
+          width: "1440px",
+          padding: "8px",
+          boxSizing: "border-box",
+        }}
+      >
+        <div
+          className="flex flex-row"
+          style={{
+            width: "1280px",
+            height: "639px",
+            gap: "12px",
+            margin: "0 auto",
+          }}
+        >
+          {/* ✅ LEFT: Dashboard Image Block (978px) */}
+          <div
+            style={{
+              width: "978px",
+              height: "639px",
+              borderRadius: "48px",
+              overflow: "hidden",
+              flexShrink: 0,
+              display: "flex",
+            }}
+          >
             <img
               src="/assets/images/leave/4.png"
               alt="Reports Dashboard"
-              className="rounded-[24px] w-full"
+              className="w-full h-full object-cover"
             />
           </div>
-        </div>
 
-        {/* RIGHT: Note + button + illustration */}
-        <div className="lg:w-1/3 w-full flex flex-col items-start order-1 lg:order-2">
+          {/* ✅ RIGHT: Text Block (278px) */}
+          <div
+            style={{
+              width: "278px",
+              height: "639px",
+              display: "flex",
+              flexDirection: "column",
+              justifyContent: "space-between",
+              flexShrink: 0,
+            }}
+          >
+            {/* Top Content */}
+            <div>
+              {/* ✅ Title with icon */}
+              <div className="flex flex-row items-start gap-1 w-full mb-3">
+                <img
+                  src="/assets/images/leave/thumb.png"
+                  alt="illustration"
+                  className="w-7 h-7 mt-[1px]"
+                />
+                <h3 className="font-['Poppins'] font-semibold text-[20px] leading-7 tracking-[-0.624px] text-[#00B0BA] w-[246px]">
+                  Generate Accurate Leave <br />
+                  Reports in One Click
+                </h3>
+              </div>
 
-          <h3 className="text-lg font-semibold text-[#00b6f3] flex items-start gap-2 mb-6">
-            <img
-              src="/assets/images/leave/thumb.png"
-              alt="illustration"
-              className="w-7"
-            /> Generate Accurate Leave <br />
-            Reports in One Click
-          </h3>
+              {/* ✅ Dashed Quote box */}
+              <div className="relative w-[278px] h-[152px] isolate bg-transparent mb-4">
+                <svg
+                  className="absolute inset-0 w-full h-full pointer-events-none"
+                  viewBox="0 0 278 152"
+                  fill="none"
+                >
+                  <rect
+                    x="1"
+                    y="1"
+                    width="276"
+                    height="150"
+                    rx="15"
+                    ry="15"
+                    stroke="#00B0BA"
+                    strokeWidth="2"
+                    strokeDasharray="11 11"
+                  />
+                </svg>
 
-          {/* Dashed quote box */}
-          <div className="relative border-2 border-dashed border-[#00b6f3] rounded-lg p-6 text-sm text-[#4b5563] mb-8">
-            <span className="absolute -top-4 left-4 text-3xl text-[#00b6f3]">“</span>
-            Create department-wise, date-wise, and type-wise leave reports
-            to support precise HR planning.
+                <div
+                  className="relative flex flex-col items-start gap-4 rounded-[15px] w-full h-full"
+                  style={{ padding: "24px" }}
+                >
+                  <p
+                    className="w-[230px]"
+                    style={{
+                      fontFamily: "Poppins",
+                      fontStyle: "italic",
+                      fontWeight: 400,
+                      fontSize: "16px",
+                      lineHeight: "26px",
+                      color: "#58595D",
+                    }}
+                  >
+                    Create department-wise, date-wise, and type-wise leave
+                    reports to support precise HR planning.
+                  </p>
+                </div>
+
+                {/* Quote cutout icon */}
+                <div className="absolute w-12 h-[34px] left-[34px] -top-[15px] bg-[#eefdff] flex items-center justify-center">
+                  <img
+                    src="/assets/images/vector.png"
+                    alt="quote"
+                    className="w-[32px] h-[32px] object-contain"
+                  />
+                </div>
+              </div>
+
+              {/* ✅ Explore Button */}
+              <div style={{ display: "flex", justifyContent: "flex-start" }}>
+                <button className="box-border flex flex-row items-center justify-center p-[6px_24px] bg-[#00B0BA] border-2 border-[#2E2F35] shadow-[3px_3px_0px_#2E2F35] rounded-lg w-[124px] h-9">
+                  <span className="font-['Poppins'] font-semibold text-[16px] leading-6 tracking-[1.2px] uppercase text-white">
+                    Explore
+                  </span>
+                </button>
+              </div>
+            </div>
+
+            {/* ✅ Illustration Bottom */}
+            <div className="flex justify-center">
+              <div className="w-[195px] h-[300px]">
+                <img
+                  src="/assets/images/leave/44.png"
+                  alt="illustration"
+                  className="w-full h-full object-contain -scale-x-100"
+                />
+              </div>
+            </div>
           </div>
-
-          {/* Outlined Explore button */}
-          <button className="border-2 border-[#00b6f3] text-[#00b6f3] font-semibold px-6 py-2 rounded-lg shadow hover:bg-[#00b6f3] hover:text-white transition">
-            EXPLORE
-          </button>
-
-          {/* Illustration (bottom-right aligned) */}
-          <div className="mt-16 self-end">
-            <img
-              src="/assets/images/leave/44.png"
-              alt="illustration"
-              className="w-40"
-            />
-          </div>
         </div>
-
       </div>
     </section>
   );

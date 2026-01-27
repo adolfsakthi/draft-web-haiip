@@ -7,7 +7,7 @@ html {
 }
 
 body {
-  font-family: 'Inter', sans-serif;
+  font-family: 'Poppins', sans-serif;
 }
 
 .gradient-divider-vertical {
@@ -33,4 +33,37 @@ body {
   border-radius: 20px;
   filter: url(#scribble);
   pointer-events: none;
+}
+
+.divider-vertical {
+  width: 1px;
+  height: 352px;
+  /* Strict height from user */
+  background: linear-gradient(225deg, #F76680 0%, #57007B 100%);
+}
+
+.divider-horizontal {
+  width: 1190px;
+  /* derived from height 1190 rotated 90deg */
+  height: 1px;
+  background: linear-gradient(225deg, #F76680 0%, #57007B 100%);
+}
+
+.nav-link-active {
+  background: linear-gradient(225deg, #F76680 0%, #57007B 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  position: relative;
+}
+
+.nav-link-active::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -4px;
+  /* Adjust distance */
+  height: 2px;
+  width: 100%;
+  background: linear-gradient(225deg, #F76680 0%, #57007B 100%);
 }
