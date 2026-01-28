@@ -39,7 +39,7 @@ const WhatWeDeliver = () => {
               alt="star"
               className="w-10 h-10 lg:w-14 lg:h-14 object-contain"
             />
-            <h2 className="text-3xl md:text-5xl font-bold text-black" style={{ fontFamily: 'Orbitron, sans-serif' }}>
+            <h2 className="text-3xl md:text-5xl font-bold text-black" style={{ fontFamily: 'Zen Dots, sans-serif' }}>
               What We Deliver
             </h2>
           </div>
@@ -72,16 +72,16 @@ const WhatWeDeliver = () => {
 
         {/* DESKTOP VIEW: ICONS + LINE + CONTENT */}
         <div className="hidden lg:block">
-          {/* ICONS ROW */}
-          <div className="flex justify-between items-center mb-4 px-24">
+          {/* ICONS ROW - Aligned with Content Grid */}
+          <div className="grid grid-cols-3 gap-20 px-12 mb-4">
             {deliverItems.map((item) => (
-              <img
-                key={item.step}
-                src={item.image}
-                alt={item.title}
-                className={`h-[64px] w-[64px] object-contain ${item.step === "01" ? "ml-14" : item.step === "03" ? "mr-14" : ""
-                  }`}
-              />
+              <div key={item.step} className="flex justify-center">
+                <img
+                  src={item.image}
+                  alt={item.title}
+                  className="h-[82px] w-[82px] object-contain opacity-100"
+                />
+              </div>
             ))}
           </div>
 
@@ -101,7 +101,7 @@ const WhatWeDeliver = () => {
           {/* CONTENT BELOW */}
           <div className="mt-14 grid grid-cols-3 gap-20 px-12">
             {deliverItems.map((item) => (
-              <div key={item.step} className="text-center">
+              <div key={item.step} className="text-center flex flex-col items-center">
 
                 {/* BIG OUTLINE NUMBER */}
                 <div
@@ -112,12 +112,26 @@ const WhatWeDeliver = () => {
                 </div>
 
                 {/* TITLE */}
-                <h3 className="mt-6 text-2xl font-semibold text-black">
+                <h3
+                  className="mt-6 text-2xl font-semibold text-black"
+                  style={{ fontFamily: "'Poppins', sans-serif" }}
+                >
                   {item.title}
                 </h3>
 
                 {/* DESCRIPTION */}
-                <p className="mt-3 text-base leading-relaxed text-[#7a7a7a] max-w-[320px] mx-auto">
+                <p
+                  className="mt-3 text-[#7a7a7a] max-w-[320px] mx-auto"
+                  style={{
+                    fontFamily: "'Archivo', sans-serif",
+                    fontWeight: 400,
+                    fontStyle: "normal",
+                    fontSize: "18px",
+                    lineHeight: "24px",
+                    letterSpacing: "0.02em", // 2%
+                    textAlign: "center"
+                  }}
+                >
                   {item.description}
                 </p>
 

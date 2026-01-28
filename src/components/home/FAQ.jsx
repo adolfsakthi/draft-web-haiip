@@ -39,12 +39,12 @@ const FAQSection = () => {
 
           {/* LEFT TITLE */}
           <div className="flex items-center gap-4">
-           <img
-    src="/Star.png"
-    alt="star"
-    className="w-14 h-14 object-contain"
-  />
-            <h2 className="text-5xl font-bold text-black" style={{ fontFamily: 'Orbitron, sans-serif' }}>
+            <img
+              src="/Star.png"
+              alt="star"
+              className="w-14 h-14 object-contain"
+            />
+            <h2 className="text-5xl font-bold text-black" style={{ fontFamily: 'Zen Dots, sans-serif' }}>
               FAQ's
             </h2>
           </div>

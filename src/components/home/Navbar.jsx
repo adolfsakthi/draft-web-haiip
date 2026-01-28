@@ -8,7 +8,7 @@ const Navbar = () => {
         {/* Left: Logo + Brand */}
         <div className="flex items-center gap-3">
           <img src="/logo.png" alt="Hezee Access" className="w-47 h-11" />
-          
+
         </div>
 
         {/* Center: Navigation Links */}
@@ -49,7 +49,7 @@ const Navbar = () => {
             <span>+91 9036122890</span>
           </div>
 
-          <button className="bg-gray-900 text-white px-6 py-3 rounded-lg font-medium hover:bg-gray-800 transition">
+          <button className="bg-[#0F161E] text-white px-[16px] py-[12px] rounded-[6px] border-[2px] border-[#0F161E] font-medium hover:bg-gray-800 transition">
             Request a demo
           </button>
         </div>

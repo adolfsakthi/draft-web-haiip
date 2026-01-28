@@ -26,7 +26,7 @@ export default function Testimonials() {
       {/* HEADER */}
       <div className="w-full max-w-[1400px] mx-auto flex flex-col lg:flex-row justify-between items-start px-6 lg:px-10 gap-8 lg:gap-0">
 
-        <h2 className="flex items-center gap-4 text-3xl md:text-5xl font-semibold text-black" style={{ fontFamily: 'Orbitron, sans-serif' }}>
+        <h2 className="flex items-center gap-4 text-3xl md:text-5xl font-semibold text-black" style={{ fontFamily: 'Zen Dots, sans-serif' }}>
           <img
             src="/Star.png"
             alt="star"

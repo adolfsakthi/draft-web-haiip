@@ -33,7 +33,7 @@ const AboutUs = () => {
               alt="star"
               className="w-10 h-10 lg:w-14 lg:h-14 object-contain"
             />
-            <h2 className="text-3xl md:text-4xl font-bold text-black" style={{ fontFamily: 'Orbitron, sans-serif' }}>About Us</h2>
+            <h2 className="text-3xl md:text-4xl font-bold text-black" style={{ fontFamily: 'Zen Dots, sans-serif' }}>About Us</h2>
           </div>
 
           {/* RIGHT CONTENT WITH VERTICAL LINE */}

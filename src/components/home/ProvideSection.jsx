@@ -15,7 +15,7 @@ const ProvideSection = () => {
               alt="star"
               className="w-10 h-10 lg:w-14 lg:h-14 object-contain"
             />
-            <h2 className="text-3xl md:text-5xl font-bold text-black" style={{ fontFamily: 'Orbitron, sans-serif' }}>
+            <h2 className="text-3xl md:text-5xl font-bold text-black" style={{ fontFamily: 'zen dots, sans-serif' }}>
               What We Provide
             </h2>
           </div>
@@ -82,6 +82,7 @@ const ProvideSection = () => {
           <div className="w-full lg:w-[420px] text-center lg:text-left">
             <h3 className="flex justify-center lg:justify-start items-center gap-4 text-3xl md:text-5xl font-semibold text-black">
               Hardware’s
+
               <img
                 src="/arrow.png"
                 alt=""

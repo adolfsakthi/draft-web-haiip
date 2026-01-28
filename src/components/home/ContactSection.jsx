@@ -7,7 +7,7 @@ export default function ContactSection() {
         {/* LEFT CONTENT */}
         <div className="w-full max-w-[620px]">
 
-          <h2 className="text-white text-[32px] md:text-[56px] leading-[1.1] font-semibold" style={{ fontFamily: 'Orbitron, sans-serif' }}>
+          <h2 className="text-white text-[32px] md:text-[56px] leading-[1.1] font-semibold" style={{ fontFamily: 'Zen Dots, sans-serif' }}>
             We're Here To <br />
             Connect And <br />
             Assist You

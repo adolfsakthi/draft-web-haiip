@@ -44,7 +44,7 @@ const ServicesSection = () => {
               alt="star"
               className="w-10 h-10 md:w-14 md:h-14 object-contain"
             />
-            <h2 style={{ fontFamily: 'Orbitron, sans-serif' }}>Our Services</h2>
+            <h2 style={{ fontFamily: 'Zen Dots, sans-serif' }}>Our Services</h2>
           </div>
 
           <div className="relative flex max-w-xl gap-5">

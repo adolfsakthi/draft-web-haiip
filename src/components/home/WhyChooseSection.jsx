@@ -25,55 +25,72 @@ const items = [
 
 const WhyChooseHezee = () => {
   return (
-    <section className="flex justify-center bg-[#fbfaff] py-16 md:py-20">
-      <div className="w-full max-w-[1440px] px-6 lg:px-20 relative">
+    <section className="flex justify-center bg-[#fbfaff] py-28 relative overflow-hidden">
+      <div className="w-[1400px] relative">
+
+        {/* BACKGROUND FLOWER IMAGE */}
+        <img
+          src="/src/assets/images/property/grey_flower.png"
+          alt=""
+          className="
+    absolute
+    top-[60%]
+    right-[-60px]
+    -translate-y-1/2
+    opacity-[0.2]
+    pointer-events-none
+    z-0
+  "
+          style={{
+            width: "812px",
+            height: "1030px",
+            transform: "translateY(-50%) rotate(74.88deg)",
+          }}
+        />
+
 
         {/* HEADER */}
-        <div className="flex flex-col lg:flex-row justify-between items-start mb-12 lg:mb-16 gap-8 lg:gap-0">
+        <div className="relative z-10 flex justify-between items-start mb-16">
 
-          {/* LEFT TITLE */}
           <div className="flex items-center gap-4">
             <img
               src="/Star.png"
               alt="star"
-              className="w-10 h-10 lg:w-14 lg:h-14 object-contain"
+              className="w-14 h-14 object-contain"
             />
-            <h2 className="text-3xl md:text-5xl font-bold text-black" style={{ fontFamily: 'Orbitron, sans-serif' }}>
+            <h2 className="text-5xl font-normal text-black" style={{ fontFamily: 'Zen Dots, sans-serif' }}>
               Why Choose Hezee
             </h2>
           </div>
 
-          {/* RIGHT TAGLINE */}
-          <div className="relative pl-6 max-w-full lg:max-w-[360px]">
-
-            {/* Vertical Accent Line */}
+          <div className="relative pl-6 max-w-[360px]">
             <div className="absolute left-0 top-1 h-[85%] w-[3px] bg-[#cf3d9c]" />
-
-            {/* Gradient Subtitle */}
-            <p className="
-              text-base md:text-lg 
-              italic 
-              font-medium
-              leading-relaxed
-              bg-gradient-to-b 
-              from-[#cf3d9c] 
-              via-[#b44bb2] 
-              to-[#5b38c6]
-              bg-clip-text 
-              text-transparent
-            ">
+            <p
+              className="
+                text-lg
+                italic
+                font-medium
+                font-poppins
+                leading-relaxed
+                bg-gradient-to-b
+                from-[#cf3d9c]
+                via-[#b44bb2]
+                to-[#5b38c6]
+                bg-clip-text
+                text-transparent
+              "
+            >
               Trusted by businesses worldwide for reliable, scalable solutions.
             </p>
-
           </div>
 
         </div>
 
-        {/* MAIN DISPLAY - GRID/FLEX */}
-        <div className="flex flex-col lg:grid lg:grid-cols-[1.3fr_1fr] border border-black rounded-xl overflow-hidden">
+        {/* MAIN GRID */}
+        <div className="relative z-10 grid grid-cols-2 border border-black">
 
-          {/* LEFT IMAGE - on Desktop. On mobile, it acts as top banner or hidden if needed (keeping it) */}
-          <div className="h-[300px] lg:h-[520px] overflow-hidden">
+          {/* LEFT IMAGE */}
+          <div className="h-[600px] overflow-hidden">
             <img
               src="/why/hero.png"
               alt="Hezee quality"
@@ -81,36 +98,54 @@ const WhyChooseHezee = () => {
             />
           </div>
 
-          {/* RIGHT 2x2 GRID (Stacks on mobile) */}
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 lg:grid-rows-2">
+          {/* RIGHT 2x2 GRID */}
+          <div className="grid grid-cols-2 grid-rows-2">
 
             {items.map((item, idx) => (
               <div
                 key={idx}
-                className={`group relative overflow-hidden border-b sm:border-b-0 lg:border-b border-black last:border-b-0 sm:last:border-b lg:last:border-b-0 border-r-0 sm:border-r lg:border-r lg:border-l-0 p-8`}
-                // Note: Border logic gets messy with manual borders in responsive grid.
-                // Simplified border approach: All have border, last ones remove.
-                style={{
-                  borderBottom: '1px solid black',
-                  borderLeft: '1px solid black'
-                }}
+                className="
+                  group relative overflow-hidden
+                  border-l border-b border-black
+                  p-10
+                  bg-transparent
+                "
               >
-                {/* Background gradient layer */}
-                <div className="absolute inset-0 bg-gradient-to-br from-transparent via-[#f5f7fb]/20 to-[#eef1f9]/30 opacity-20 transition-opacity duration-300 group-hover:opacity-40" />
-
-                {/* Dark hover overlay */}
-                <div className="absolute inset-0 bg-white transition-opacity duration-300 group-hover:bg-[#f2f2f7]" />
+                {/* SOFT HOVER GRADIENT */}
+                <div
+                  className="
+                    absolute inset-0
+                    bg-gradient-to-br
+                    from-transparent
+                    via-[#f5f7fb]/30
+                    to-[#eef1f9]/40
+                    opacity-0
+                    transition-opacity duration-300
+                    group-hover:opacity-100
+                  "
+                />
 
                 {/* CONTENT */}
-                <div className="relative z-10 h-full flex flex-col justify-between gap-6 lg:gap-0">
+                <div className="relative z-10 h-full flex flex-col justify-between">
 
-                  {/* Title always visible */}
-                  <h3 className="text-lg lg:text-xl font-semibold text-[#2a2d4a]">
+                  <h3 className="text-xl font-semibold font-poppins text-[#2a2d4a]">
                     {item.title}
                   </h3>
 
-                  {/* Description only on hover (Desktop) / Always visible (Mobile) for usability */}
-                  <p className="max-w-[260px] text-sm lg:text-base leading-relaxed text-black lg:opacity-0 lg:translate-y-4 lg:group-hover:opacity-100 lg:group-hover:translate-y-0 opacity-100 translate-y-0 transition-all duration-300">
+                  <p
+                    className="
+                      max-w-[260px]
+                      text-base
+                      leading-relaxed
+                      font-poppins
+                      text-black
+                      opacity-0
+                      translate-y-4
+                      transition-all duration-300
+                      group-hover:opacity-100
+                      group-hover:translate-y-0
+                    "
+                  >
                     {item.desc}
                   </p>
 
