@@ -9,7 +9,7 @@ const accentLines = [
 
 const HeroBanner = () => {
   return (
-    <section className="w-full">
+    <section id="home" className="w-full">
 
       <div
         className="relative overflow-hidden w-full flex items-start py-0"
@@ -47,16 +47,27 @@ const HeroBanner = () => {
             {/* SOFTWARE BUTTON */}
             {/* SOFTWARE BUTTON */}
             <div className="bg-[rgba(47,72,88,0.1)] rounded-[8px] p-[10px] w-full sm:w-auto">
-              <button className="w-full sm:w-auto rounded-xl bg-[#7DC242] px-8 py-4 text-base md:text-lg font-semibold text-white transition hover:-translate-y-1">
-                Explore Software Solutions
-              </button>
+              <div className="bg-[rgba(47,72,88,0.1)] rounded-[8px] p-[10px] w-full sm:w-auto">
+                <button className="w-full sm:w-auto rounded-xl bg-[#7DC242] px-8 py-4 text-base md:text-lg font-semibold text-white transition hover:-translate-y-1">
+                  Explore Software Solutions
+                </button>
+              </div>
             </div>
 
             {/* SECURITY BUTTON */}
             <div className="bg-[rgba(47,72,88,0.1)] rounded-[8px] p-[10px] w-full sm:w-auto">
-              <button className="w-full sm:w-auto rounded-xl bg-[rgba(43,42,75,1)] px-8 py-4 text-base md:text-lg font-semibold text-white transition hover:-translate-y-1">
-                Explore Security Products
-              </button>
+              <div className="bg-[rgba(47,72,88,0.1)] rounded-[8px] p-[10px] w-full sm:w-auto">
+                <button
+                  onClick={() => {
+                    document.getElementById('security-products')?.scrollIntoView({
+                      behavior: 'smooth',
+                      block: 'start'
+                    });
+                  }}
+                  className="w-full sm:w-auto rounded-xl bg-[rgba(43,42,75,1)] px-8 py-4 text-base md:text-lg font-semibold text-white transition hover:-translate-y-1">
+                  Explore Security Products
+                </button>
+              </div>
             </div>
 
           </div>

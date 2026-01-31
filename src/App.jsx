@@ -9,10 +9,12 @@ import GymManagement from './pages/GymManagement';
 import HRManagement from './pages/HRManagement';
 import About from './pages/About';
 import PrivacyPolicy from './pages/PrivacyPolicy';
+import ScrollToTop from './components/ScrollToTop';
 
 function App() {
   return (
     <BrowserRouter>
+      <ScrollToTop />
       <Routes>
         <Route path="/" element={<Layout />}>
           <Route index element={<Home />} />

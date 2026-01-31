@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { Link, NavLink, useLocation } from "react-router-dom";
 import { Menu, X, ChevronDown, LayoutGrid, Building2, Monitor, CalendarDays, ScanFace, Dumbbell } from "lucide-react";
 import logo from "../assets/images/layout/FinalLogo2.png";
@@ -9,9 +9,62 @@ const GRADIENT =
 const Navbar = () => {
     const [isOpen, setIsOpen] = useState(false);
     const [isProductOpen, setIsProductOpen] = useState(false);
+    const [activeSection, setActiveSection] = useState("home");
     const location = useLocation();
 
     const isProductActive = location.pathname.includes("management");
+
+    // Scroll spy to detect active section
+    useEffect(() => {
+        if (location.pathname !== '/') {
+            setActiveSection('');
+            return;
+        }
+
+        const handleScroll = () => {
+            const sections = ['home', 'services', 'security-products', 'contact'];
+            // Account for navbar height (80px) plus some offset
+            const navbarHeight = 80;
+            const offset = 200;
+            const scrollPosition = window.scrollY + navbarHeight + offset;
+
+            // Check if we're at the very top
+            if (window.scrollY < 100) {
+                setActiveSection('home');
+                return;
+            }
+
+            // Check if we're near the bottom of the page
+            const isNearBottom = window.innerHeight + window.scrollY >= document.documentElement.scrollHeight - 50;
+
+            if (isNearBottom) {
+                setActiveSection('contact');
+                return;
+            }
+
+            // Check sections in reverse order (bottom to top) for better detection
+            for (let i = sections.length - 1; i >= 0; i--) {
+                const sectionId = sections[i];
+                const element = document.getElementById(sectionId);
+                if (element) {
+                    const rect = element.getBoundingClientRect();
+                    const elementTop = rect.top + window.scrollY;
+
+                    if (scrollPosition >= elementTop) {
+                        setActiveSection(sectionId);
+                        return;
+                    }
+                }
+            }
+
+            // Fallback to home if no section matched
+            setActiveSection('home');
+        };
+
+        handleScroll(); // Check on mount
+        window.addEventListener('scroll', handleScroll);
+        return () => window.removeEventListener('scroll', handleScroll);
+    }, [location.pathname]);
 
     const baseText =
         "relative text-sm md:text-[16px] font-normal transition-colors";
@@ -31,22 +84,44 @@ const Navbar = () => {
                     {/* DESKTOP NAV */}
                     <div className="hidden md:flex items-center gap-10">
 
+
                         <NavLink
                             to="/"
                             end
-                            className={({ isActive }) =>
-                                `${baseText} ${isActive ? "nav-link-active" : inactiveText}`
-                            }
+                            onClick={(e) => {
+                                if (location.pathname === '/') {
+                                    e.preventDefault();
+                                    document.getElementById('home')?.scrollIntoView({
+                                        behavior: 'smooth',
+                                        block: 'start'
+                                    });
+                                }
+                            }}
+                            className={({ isActive }) => {
+                                // On home page, use scroll-based active state
+                                if (location.pathname === '/') {
+                                    return `${baseText} ${activeSection === 'home' ? 'nav-link-active' : inactiveText}`;
+                                }
+                                // On other pages, use route-based active state
+                                return `${baseText} ${isActive ? 'nav-link-active' : inactiveText}`;
+                            }}
                         >
                             Home
                         </NavLink>
 
-                        <a
-                            href="/#services"
-                            className={`${baseText} ${inactiveText} hover:text-black`}
+
+                        <button
+                            onClick={() => {
+                                document.getElementById('services')?.scrollIntoView({
+                                    behavior: 'smooth',
+                                    block: 'start'
+                                });
+                            }}
+                            className={`${baseText} ${activeSection === 'services' ? 'nav-link-active' : inactiveText} hover:text-black cursor-pointer`}
                         >
                             Services
-                        </a>
+                        </button>
+
 
                         <div className="relative group">
                             <button
@@ -65,12 +140,12 @@ const Navbar = () => {
 
                                 <div className="p-2">
                                     {/* Header Section */}
-                                    <div className="bg-[#fcf5fd] rounded-lg p-3 mb-2 flex items-center gap-3">
+                                    {/* <div className="bg-[#fcf5fd] rounded-lg p-3 mb-2 flex items-center gap-3">
                                         <div className="text-[#b91c7f]">
                                             <LayoutGrid size={20} />
                                         </div>
                                         <span className="font-bold text-[#b91c7f] text-[15px]">Product category</span>
-                                    </div>
+                                    </div> */}
 
                                     {/* Product List */}
                                     <div className="flex flex-col space-y-1">
@@ -110,9 +185,23 @@ const Navbar = () => {
 
                         <NavLink
                             to="/contact"
-                            className={({ isActive }) =>
-                                `${baseText} ${isActive ? "nav-link-active" : inactiveText}`
-                            }
+                            onClick={(e) => {
+                                if (location.pathname === '/') {
+                                    e.preventDefault();
+                                    document.getElementById('contact')?.scrollIntoView({
+                                        behavior: 'smooth',
+                                        block: 'start'
+                                    });
+                                }
+                            }}
+                            className={({ isActive }) => {
+                                // On home page, use scroll-based active state
+                                if (location.pathname === '/') {
+                                    return `${baseText} ${activeSection === 'contact' ? 'nav-link-active' : inactiveText}`;
+                                }
+                                // On other pages, use route-based active state
+                                return `${baseText} ${isActive ? 'nav-link-active' : inactiveText}`;
+                            }}
                         >
                             Contact
                         </NavLink>

@@ -33,7 +33,7 @@ const ServicesSection = () => {
     Math.floor(VISIBLE / 2) * (CARD_WIDTH + GAP);
 
   return (
-    <section className="relative flex justify-center bg-[#f7f7fb] py-16 md:py-24 overflow-hidden">
+    <section id="services" className="relative flex justify-center bg-[#f7f7fb] py-16 md:py-24 overflow-hidden">
       <div className="w-full max-w-[1320px] px-6">
 
         {/* HEADER */}

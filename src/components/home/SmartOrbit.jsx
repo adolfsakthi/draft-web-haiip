@@ -37,7 +37,7 @@ const SmartOrbit = () => {
   };
 
   return (
-    <section className="relative flex justify-center bg-white py-24 overflow-hidden">
+    <section id="security-products" className="relative flex justify-center bg-white py-24 overflow-hidden">
       <div className="relative w-[1300px]">
 
         {/* HEADER */}

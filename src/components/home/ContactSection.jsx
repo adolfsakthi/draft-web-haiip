@@ -1,6 +1,6 @@
 export default function ContactSection() {
   return (
-    <section className="relative w-full bg-gradient-to-r from-[#0b1220] to-[#101a2c] py-16 md:py-28">
+    <section id="contact" className="relative w-full bg-gradient-to-r from-[#0b1220] to-[#101a2c] py-16 md:py-28">
 
       <div className="max-w-[1400px] mx-auto flex flex-col lg:flex-row items-center lg:items-start justify-between px-6 lg:px-16 gap-12 lg:gap-0">
 
