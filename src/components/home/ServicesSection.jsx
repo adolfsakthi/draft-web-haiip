@@ -78,10 +78,10 @@ const ServicesSection = () => {
               alt="star"
               className="w-10 h-10 md:w-14 md:h-14 object-contain"
             />
-            <h2 style={{ fontFamily: 'Zen Dots', fontWeight: 400, fontSize: '50px', lineHeight: '100%', letterSpacing: '0%' }}>Our Services</h2>
+            <h2 className="text-3xl md:text-5xl" style={{ fontFamily: 'Zen Dots', fontWeight: 400, lineHeight: '100%', letterSpacing: '0%' }}>Our Services</h2>
           </div>
 
-          <div className="relative flex max-w-2xl gap-5 mt-12 lg:ml-32 lg:left-10">
+          <div className="relative flex max-w-2xl gap-5 mt-8 lg:mt-12 lg:ml-32">
 
             {/* Vertical Accent Line */}
             <div

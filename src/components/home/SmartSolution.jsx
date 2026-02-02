@@ -52,7 +52,7 @@ const SmartSolutions = () => {
               className="w-14 h-14 object-contain"
             />
             <h2
-              className="text-5xl font-normal text-black"
+              className="text-3xl md:text-5xl font-normal text-black"
               style={{ fontFamily: 'Zen Dots, sans-serif' }}
             >
               Smart Solutions
@@ -91,15 +91,15 @@ const SmartSolutions = () => {
         </div>
 
         {/* TOP ROW CARDS */}
-        <div className="flex justify-center gap-20">
+        <div className="flex flex-col lg:flex-row justify-center items-center gap-8 lg:gap-20">
 
           {topCards.map((item, idx) => (
             <div
               key={idx}
-              className="bg-white border border-[#eadcf3]"
+              className="bg-white border border-[#eadcf3] w-full max-w-[350px]"
               style={{
-                width: '350px',
-                height: '122px',
+                height: 'auto',
+                minHeight: '122px',
                 padding: '20px 24px',
                 borderRadius: '9px',
                 borderWidth: '1px',
@@ -145,8 +145,8 @@ const SmartSolutions = () => {
 
         </div>
 
-        {/* CONNECTOR LINE */}
-        <div className="relative mt-10 mx-10 h-[1px] bg-[#ff4d6d]">
+        {/* CONNECTOR LINE - Desktop Only */}
+        <div className="hidden lg:block relative mt-10 mx-10 h-[1px] bg-[#ff4d6d]">
 
           {/* TOP DROPS */}
           <div className="absolute bottom-full left-[13%] h-[34px] w-[1px] bg-[#ff4d6d]" />
@@ -167,15 +167,15 @@ const SmartSolutions = () => {
         </div>
 
         {/* BOTTOM ROW CARDS */}
-        <div className="mt-14 flex justify-center gap-20 ml-24">
+        <div className="mt-8 lg:mt-14 flex flex-col lg:flex-row justify-center items-center gap-8 lg:gap-20 lg:ml-24">
 
           {bottomCards.map((item, idx) => (
             <div
               key={idx}
-              className="bg-white border border-[#eadcf3]"
+              className="bg-white border border-[#eadcf3] w-full max-w-[350px]"
               style={{
-                width: '350px',
-                height: '122px',
+                height: 'auto',
+                minHeight: '122px',
                 padding: '20px 24px',
                 borderRadius: '9px',
                 borderWidth: '1px',

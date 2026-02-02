@@ -2,18 +2,18 @@ import React from "react";
 import { Link } from "react-router-dom";
 
 const solutionCards = [
-  { title: "HRMS cum Payroll Management System", image: "/slides/hrms.png", path: "/hr-management" },
-  { title: "Leave Management System", image: "/slides/leave.png", path: "/leave-management" },
-  { title: "Hotel Management System", image: "/slides/hotel.png", path: "/hotel-management" },
-  { title: "Canteen Management System", image: "/slides/canteen.png", path: "/canteen-management" },
-  { title: "GYM Management System", image: "/slides/gym.png", path: "/gym-management" },
-  { title: "Campus Management System", image: "/slides/campus.png", path: "/campus-management" },
-  { title: "Visitor Management System", image: "/slides/visitor.png", path: "/visitor-management" },
+  { title: "HRMS cum Payroll Management System", image: "/card/payroll.png", path: "/hr-management" },
+  { title: "Leave Management System", image: "/card/leave.jpg", path: "/leave-management" },
+  { title: "Hotel Management System", image: "/card/hotel.png", path: "/hotel-management" },
+  { title: "Canteen Management System", image: "/card/cateen.png", path: "/canteen-management" },
+  { title: "GYM Management System", image: "/card/gym.png", path: "/gym-management" },
+  { title: "Campus Management System", image: "/card/campus.jpg", path: "/campus-management" },
+  { title: "Visitor Management System", image: "/card/visitor.jpg", path: "/visitor-management" },
 ];
 
 const SolutionCarousel = () => {
   return (
-    <section className="flex justify-center bg-white overflow-hidden pb-10 -mt-20">
+    <section className="flex justify-center bg-white overflow-hidden pb-10">
       {/* SECTION FRAME */}
       <div className="max-w-[1400px] w-full min-h-[380px] overflow-hidden px-4">
         {/* MARQUEE CONTAINER */}

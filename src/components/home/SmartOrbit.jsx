@@ -31,6 +31,17 @@ const products = [
 
 const SmartOrbit = () => {
 
+  const [isMobile, setIsMobile] = React.useState(false);
+
+  React.useEffect(() => {
+    const handleResize = () => {
+      setIsMobile(window.innerWidth < 1024);
+    };
+    handleResize();
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
+
   const handleDownload = (title) => {
     // precise-ui-response
     alert(`Downloading ${title} Datasheet...`);
@@ -66,7 +77,7 @@ const SmartOrbit = () => {
               className="w-14 h-14 object-contain"
             />
             <h2
-              className="text-5xl font-normal text-black"
+              className="text-3xl md:text-5xl font-normal text-black"
               style={{ fontFamily: 'Zen Dots, sans-serif' }}
             >
               Explore our product <br className="hidden lg:block" /> categories
@@ -105,11 +116,10 @@ const SmartOrbit = () => {
         </div>
 
         {/* ================= EXACT IMAGE REPLICATION ================= */}
-        <div className="relative w-full h-[650px] mt-20 select-none">
+        <div className="relative w-full min-h-[400px] lg:h-[650px] mt-20 select-none">
 
-          {/* ORBITAL LINES (SVG) */}
-          {/* These paths approximate the 4 curves seen in the image */}
-          <svg className="absolute inset-0 w-full h-full pointer-events-none z-0" xmlns="http://www.w3.org/2000/svg">
+          {/* ORBITAL LINES (SVG) - Desktop Only */}
+          <svg className="hidden lg:block absolute inset-0 w-full h-full pointer-events-none z-0" xmlns="http://www.w3.org/2000/svg">
             <defs>
               <linearGradient id="lineGrad" x1="0%" y1="0%" x2="100%" y2="0%">
                 <stop offset="0%" stopColor="#cf3d9c" stopOpacity="0.2" />
@@ -141,22 +151,23 @@ const SmartOrbit = () => {
           </svg>
 
 
-          {/* ITEMS */}
-          {products.map((item) => (
-            <div
-              key={item.id}
-              className="absolute flex flex-col items-center group cursor-pointer z-10"
-              style={{
-                top: item.top,
-                left: item.left,
-                transform: "translate(-50%, -50%)", // Center on coordinate
-              }}
-              onClick={() => handleDownload(item.title)}
-            >
-              {/* ICON CIRCLE */}
-              {/* Using a light blue glowing circle effect similar to image */}
+          {/* ITEMS - Grid on Mobile, Absolute on Desktop */}
+          <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:block gap-y-12 gap-x-6">
+            {products.map((item) => (
               <div
-                className="
+                key={item.id}
+                className="relative lg:absolute flex flex-col items-center group cursor-pointer z-10"
+                style={!isMobile ? {
+                  top: item.top,
+                  left: item.left,
+                  transform: "translate(-50%, -50%)",
+                } : {}}
+                onClick={() => handleDownload(item.title)}
+              >
+                {/* ICON CIRCLE */}
+                {/* Using a light blue glowing circle effect similar to image */}
+                <div
+                  className="
                   w-16 h-16 
                   rounded-full 
                   bg-[#e6f0ff] 
@@ -171,22 +182,23 @@ const SmartOrbit = () => {
                   group-hover:shadow-[0_8px_20px_rgba(43,127,255,0.4)]
                   relative
                 "
-              >
-                <Cpu size={28} strokeWidth={1.5} />
+                >
+                  <Cpu size={28} strokeWidth={1.5} />
 
-                {/* Download Badge (Hover) */}
-                <div className="absolute -top-2 -right-2 bg-black text-white p-1 rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-300 scale-75 shadow-md">
-                  <Download size={10} />
+                  {/* Download Badge (Hover) */}
+                  <div className="absolute -top-2 -right-2 bg-black text-white p-1 rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-300 scale-75 shadow-md">
+                    <Download size={10} />
+                  </div>
                 </div>
+
+                {/* LABEL */}
+                <span className="mt-3 text-sm font-semibold text-[#1a1a1a] text-center whitespace-nowrap bg-white/60 backdrop-blur-sm px-2 py-0.5 rounded-lg">
+                  {item.title}
+                </span>
+
               </div>
-
-              {/* LABEL */}
-              <span className="mt-3 text-sm font-semibold text-[#1a1a1a] text-center whitespace-nowrap bg-white/60 backdrop-blur-sm px-2 py-0.5 rounded-lg">
-                {item.title}
-              </span>
-
-            </div>
-          ))}
+            ))}
+          </div>
 
         </div>
 

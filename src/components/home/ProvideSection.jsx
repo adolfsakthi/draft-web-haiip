@@ -15,7 +15,7 @@ const ProvideSection = () => {
               alt="star"
               className="w-10 h-10 lg:w-14 lg:h-14 object-contain"
             />
-            <h2 className="text-black" style={{ fontFamily: 'Zen Dots', fontWeight: 400, fontSize: '50px', lineHeight: '60px', letterSpacing: '0%' }}>
+            <h2 className="text-black text-3xl md:text-5xl" style={{ fontFamily: 'Zen Dots', fontWeight: 400, lineHeight: '1.2', letterSpacing: '0%' }}>
               What We Provide
             </h2>
           </div>
@@ -31,11 +31,10 @@ const ProvideSection = () => {
 
             {/* Gradient Subtitle */}
             <p
-              className="italic"
+              className="italic text-lg md:text-2xl lg:text-[26px]"
               style={{
                 fontFamily: 'Poppins',
                 fontWeight: 500,
-                fontSize: '26px',
                 lineHeight: '1.2',
                 letterSpacing: '0%',
                 background: 'linear-gradient(225deg, #F76680 0%, #57007B 100%)',
@@ -57,8 +56,8 @@ const ProvideSection = () => {
           {/* LEFT TEXT */}
           <div className="w-full lg:w-[420px] text-center lg:text-left">
             <h3
-              className="flex justify-center lg:justify-start items-center gap-4 text-black"
-              style={{ fontFamily: 'Inter', fontWeight: 400, fontSize: '59px', lineHeight: '100%', letterSpacing: '-2px', verticalAlign: 'middle' }}
+              className="flex justify-center lg:justify-start items-center gap-4 text-black text-4xl md:text-[59px]"
+              style={{ fontFamily: 'Inter', fontWeight: 400, lineHeight: '100%', letterSpacing: '-2px', verticalAlign: 'middle' }}
             >
               Software’s
               <img
@@ -96,8 +95,8 @@ const ProvideSection = () => {
           {/* LEFT TEXT (Stacked on mobile, Left on Desktop) */}
           <div className="w-full lg:w-[420px] text-center lg:text-left">
             <h3
-              className="flex justify-center lg:justify-start items-center gap-4 text-black"
-              style={{ fontFamily: 'Inter', fontWeight: 400, fontSize: '59px', lineHeight: '100%', letterSpacing: '-2px', verticalAlign: 'middle' }}
+              className="flex justify-center lg:justify-start items-center gap-4 text-black text-4xl md:text-[59px]"
+              style={{ fontFamily: 'Inter', fontWeight: 400, lineHeight: '100%', letterSpacing: '-2px', verticalAlign: 'middle' }}
             >
               Hardware’s
               <img

@@ -39,7 +39,7 @@ const WhatWeDeliver = () => {
               alt="star"
               className="w-10 h-10 lg:w-14 lg:h-14 object-contain"
             />
-            <h2 style={{ fontFamily: 'Zen Dots', fontWeight: 400, fontSize: '50px', lineHeight: '100%', letterSpacing: '0%' }}>
+            <h2 className="text-3xl md:text-5xl" style={{ fontFamily: 'Zen Dots', fontWeight: 400, lineHeight: '100%', letterSpacing: '0%' }}>
               What We Deliver
             </h2>
           </div>

@@ -51,7 +51,7 @@ const WhyChooseHezee = () => {
               alt="star"
               className="w-14 h-14 object-contain"
             />
-            <h2 className="text-5xl font-normal text-black" style={{ fontFamily: 'Zen Dots, sans-serif' }}>
+            <h2 className="text-3xl md:text-5xl font-normal text-black" style={{ fontFamily: 'Zen Dots, sans-serif' }}>
               Why Choose Hezee
             </h2>
           </div>
@@ -87,10 +87,10 @@ const WhyChooseHezee = () => {
         </div>
 
         {/* MAIN GRID */}
-        <div className="relative z-10 grid grid-cols-2 border border-black mt-16">
+        <div className="relative z-10 grid grid-cols-1 lg:grid-cols-2 border border-black mt-16">
 
           {/* LEFT IMAGE */}
-          <div className="h-[600px] overflow-hidden">
+          <div className="h-[300px] lg:h-[600px] overflow-hidden border-b lg:border-b-0 border-black">
             <img
               src="/why/hero.png"
               alt="Hezee quality"
@@ -99,7 +99,7 @@ const WhyChooseHezee = () => {
           </div>
 
           {/* RIGHT 2x2 GRID */}
-          <div className="grid grid-cols-2 grid-rows-2">
+          <div className="grid grid-cols-1 sm:grid-cols-2">
 
             {items.map((item, idx) => (
               <div

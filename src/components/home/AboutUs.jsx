@@ -33,7 +33,7 @@ const AboutUs = () => {
               alt="star"
               className="w-10 h-10 lg:w-14 lg:h-14 object-contain"
             />
-            <h2 className="text-black" style={{ fontFamily: 'Zen Dots', fontWeight: 400, fontSize: '56px', lineHeight: '100%', letterSpacing: '0%' }}>About Us</h2>
+            <h2 className="text-black text-4xl lg:text-[56px]" style={{ fontFamily: 'Zen Dots', fontWeight: 400, lineHeight: '100%', letterSpacing: '0%' }}>About Us</h2>
           </div>
 
           {/* RIGHT CONTENT WITH VERTICAL LINE */}
@@ -90,26 +90,22 @@ const AboutUs = () => {
         <div className="my-12 lg:my-20 h-[1px] w-full bg-[#dfe3f5]" />
 
         {/* BOTTOM CARDS SECTION */}
-        <div className="relative flex flex-col lg:flex-row justify-start items-center gap-8 lg:gap-0 mt-8 lg:ml-40">
+        <div className="relative flex flex-col lg:flex-row justify-center lg:justify-start items-center gap-12 lg:gap-0 mt-8 lg:ml-40">
 
           {stats.map((item, idx) => (
             <div
               key={item.title}
               style={{
-                width: '380px',
-                height: '460px',
                 background: 'linear-gradient(270deg, rgba(219, 234, 254, 0.67) 0%, rgba(219, 234, 254, 0.01) 100%)',
-                borderRadius: '0 230px 230px 0', // D-shape based on 460px height
+                borderRadius: '0 230px 230px 0',
                 display: 'flex',
                 flexDirection: 'column',
                 justifyContent: 'flex-start',
-                padding: '80px 50px',
                 position: 'relative',
                 zIndex: idx === 0 ? 20 : idx === 1 ? 10 : 0,
-                marginLeft: idx === 0 ? '0' : '-20px',
                 opacity: 1
               }}
-              className="mx-auto lg:mx-0 shadow-sm"
+              className="w-full max-w-[380px] h-[400px] lg:h-[460px] px-8 lg:px-[50px] py-16 lg:py-[80px] lg:-ml-5 first:ml-0 shadow-sm mx-auto lg:mx-0"
             >
               {/* ICON CONTAINER */}
               <div
@@ -176,7 +172,7 @@ const AboutUs = () => {
 
         </div>
       </div>
-    </section>
+    </section >
   );
 };
 

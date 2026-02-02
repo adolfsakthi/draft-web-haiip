@@ -22,69 +22,37 @@ export const Footer = () => {
                     background: 'linear-gradient(92.71deg, #0EA5E9 2.27%, #22D3EE 97.73%)'
                 }}
             >
-                <div
-                    className="text-center"
-                    style={{
-                        width: '1440px',
-                        height: '340px',
-                        paddingTop: '32px',
-                        paddingRight: '185px',
-                        paddingBottom: '32px',
-                        paddingLeft: '185px',
-                        opacity: 1,
-                        display: 'flex',
-                        flexDirection: 'column',
-                        justifyContent: 'center',
-                        alignItems: 'center'
-                    }}
-                >
+            <div
+                className="text-center w-full max-w-[1440px] px-6 md:px-20 py-16 md:py-24 flex flex-col justify-center items-center opacity-1"
+            >
 
                     <h2
-                        className="text-white"
+                        className="text-white text-2xl md:text-4xl font-bold text-center mb-8 max-w-[900px]"
                         style={{
                             fontFamily: 'Poppins',
-                            fontSize: '36px',
-                            fontWeight: 700,
-                            lineHeight: '40px',
-                            letterSpacing: '0%',
-                            textAlign: 'center',
-                            marginBottom: '32px'
+                            lineHeight: '1.2',
+                            letterSpacing: '0%'
                         }}
                     >
                         Transform Your Business with Hezee Smart Solutions
                     </h2>
 
                     <p
-                        className="text-white"
+                        className="text-white text-base md:text-xl font-normal text-center mb-10 max-w-[850px]"
                         style={{
                             fontFamily: 'Poppins',
-                            fontSize: '20px',
-                            fontWeight: 400,
-                            lineHeight: '30px',
-                            letterSpacing: '0%',
-                            textAlign: 'center',
-                            marginBottom: '40px',
-                            maxWidth: '850px'
+                            lineHeight: '1.5',
+                            letterSpacing: '0%'
                         }}
                     >
-                        Powerful software and reliable hardware to automate operations, improve<br />
+                        Powerful software and reliable hardware to automate operations, improve<br className="hidden md:block" />
                         productivity, and scale faster—without complexity.
                     </p>
 
                     <button
-                        className="bg-white text-black hover:bg-gray-100 transition-colors"
+                        className="bg-white text-black hover:bg-gray-100 transition-colors w-full max-w-[281px] h-14 rounded-lg font-semibold text-lg opacity-1"
                         style={{
-                            width: '281px',
-                            height: '56px',
-                            paddingTop: '14px',
-                            paddingRight: '65px',
-                            paddingBottom: '14px',
-                            paddingLeft: '65px',
-                            borderRadius: '8px',
-                            opacity: 1,
                             fontFamily: 'Poppins',
-                            fontSize: '18px',
-                            fontWeight: 600,
                             lineHeight: '28px',
                             letterSpacing: '0%',
                             textAlign: 'center',
@@ -117,34 +85,21 @@ export const Footer = () => {
 
                         {/* Brand + Social */}
                         <div
-                            style={{
-                                width: '214px',
-                                display: 'flex',
-                                flexDirection: 'column',
-                                gap: '24px', // Reduced gap significantly
-                                opacity: 1
-                            }}
-                            className="lg:col-span-1"
+                            className="flex flex-col gap-6 lg:col-span-1 items-center md:items-start"
+                            style={{ opacity: 1 }}
                         >
                             {/* Logo Wrapper */}
-                            <div style={{ width: '214px' }}>
+                            <div className="w-[214px]">
                                 <img
                                     src="/footer/Frame 1261155073.png"
                                     alt="Hezee Access"
-                                    style={{ width: '100%', height: 'auto', display: 'block' }}
+                                    className="w-full h-auto block"
                                 />
                             </div>
 
                             {/* Social Icons Container */}
                             <div
-                                style={{
-                                    width: '214px',
-                                    height: '32px',
-                                    display: 'flex',
-                                    alignItems: 'center',
-                                    justifyContent: 'space-between',
-                                    opacity: 1
-                                }}
+                                className="w-[214px] h-8 flex items-center justify-between opacity-1"
                             >
                                 <SocialIcon icon={Linkedin} />
                                 <SocialIcon icon={Twitter} />
@@ -154,21 +109,21 @@ export const Footer = () => {
                         </div>
 
                         {/* Company Column 1 */}
-                        <div className="ml-28">
+                        <div className="lg:ml-20">
                             <FooterColumn title="Company" />
                         </div>
 
                         {/* Company Column 2 */}
-                        <div className="ml-10">
-                            <FooterColumn title="Company" />
+                        <div className="lg:ml-10">
+                            <FooterColumn title="Solutions" />
                         </div>
 
                         {/* Company Column 3 */}
-                        <div className="-ml-8">
-                            <FooterColumn title="Company" />
+                        <div className="lg:-ml-8">
+                            <FooterColumn title="Resources" />
                         </div>
 
-                        <div className="lg:col-span-1 -ml-20" style={{ display: 'flex', flexDirection: 'column', gap: '12px', opacity: 1 }}>
+                        <div className="lg:col-span-1 lg:-ml-20 flex flex-col gap-3 opacity-1">
                             <h4
                                 style={{
                                     fontFamily: 'Nunito',
@@ -328,7 +283,7 @@ export default Footer;
 /* ================= HELPERS ================= */
 
 const FooterColumn = ({ title }) => (
-    <div style={{ width: '70px', height: '184px', opacity: 1, display: 'flex', flexDirection: 'column', gap: '12px' }}>
+    <div className="flex flex-col gap-3 opacity-1">
         <h4
             style={{
                 fontFamily: 'Nunito',
