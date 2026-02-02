@@ -30,7 +30,6 @@ const Home = () => {
                 <WhatOurClientSay />
                 <FAQSection />
                 <ContactSection />
-                <CTA />
             </main>
         </div>
     );

@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect, useRef } from "react";
 
 const services = [
   { title: "UI/UX Design", description: "Engaging, user-friendly designs that enhance experiences, improve usability, and drive customer satisfaction.", icon: "/services/uiux.png" },
@@ -8,29 +8,63 @@ const services = [
   { title: "AI Integration", description: "Smart AI solutions to automate processes, analyze data, and boost intelligent decision-making.", icon: "/services/ai.png" },
 ];
 
-const CARD_WIDTH = 290;   // reduced
+const CARD_WIDTH = 353;
 const GAP = 24;          // reduced
 const VISIBLE = 5;
 
 const ServicesSection = () => {
-  const [active, setActive] = useState(2);
   const total = services.length;
+  // We use 3 copies for seamless infinite scrolling
+  const extendedServices = [...services, ...services, ...services];
 
-  // Infinite wrap for Desktop Carousel
-  const safeIndex = (idx) => {
-    if (idx < 0) return total - 1;
-    if (idx >= total) return 0;
-    return idx;
-  };
+  // Start at the first item of the second group
+  const [active, setActive] = useState(total);
+  const [isTransitioning, setIsTransitioning] = useState(true);
+
+  const displayIndex = active % total;
+  const containerRef = useRef(null);
+  const [containerWidth, setContainerWidth] = useState(0);
+
+  useEffect(() => {
+    const updateWidth = () => {
+      if (containerRef.current) {
+        setContainerWidth(containerRef.current.offsetWidth);
+      }
+    };
+    updateWidth();
+    window.addEventListener("resize", updateWidth);
+    return () => window.removeEventListener("resize", updateWidth);
+  }, []);
+  useEffect(() => {
+    // If we've reached the start of the first group or end of the last group,
+    // jump back to the middle group silently
+    if (active < total || active >= total * 2) {
+      const timer = setTimeout(() => {
+        setIsTransitioning(false);
+        const newIndex = active < total ? active + total : active - total;
+        setActive(newIndex);
+      }, 700); // match transition duration
+      return () => clearTimeout(timer);
+    }
+  }, [active, total]);
+
+  useEffect(() => {
+    if (!isTransitioning) {
+      requestAnimationFrame(() => {
+        setIsTransitioning(true);
+      });
+    }
+  }, [isTransitioning]);
 
   const handleSelect = (idx) => {
-    setActive(safeIndex(idx));
+    if (!isTransitioning) return;
+    setActive(idx);
   };
 
-  // Center active card
-  const translateX =
-    -(active * (CARD_WIDTH + GAP)) +
-    Math.floor(VISIBLE / 2) * (CARD_WIDTH + GAP);
+  // Perfectly center active card
+  const translateX = containerWidth > 0
+    ? (containerWidth / 2) - (CARD_WIDTH / 2) - (active * (CARD_WIDTH + GAP))
+    : 0;
 
   return (
     <section className="relative flex justify-center bg-[#f7f7fb] py-16 md:py-24 overflow-hidden">
@@ -44,27 +78,34 @@ const ServicesSection = () => {
               alt="star"
               className="w-10 h-10 md:w-14 md:h-14 object-contain"
             />
-            <h2 style={{ fontFamily: 'Zen Dots, sans-serif' }}>Our Services</h2>
+            <h2 style={{ fontFamily: 'Zen Dots', fontWeight: 400, fontSize: '50px', lineHeight: '100%', letterSpacing: '0%' }}>Our Services</h2>
           </div>
 
-          <div className="relative flex max-w-xl gap-5">
+          <div className="relative flex max-w-2xl gap-5 mt-12 lg:ml-32 lg:left-10">
 
             {/* Vertical Accent Line */}
-            <div className="h-[50px] md:h-[70px] w-[3px] bg-[#c63f9d]" />
+            <div
+              className="h-[50px] md:h-[70px] w-[3px]"
+              style={{ background: 'linear-gradient(225deg, #F76680 0%, #57007B 100%)' }}
+            />
 
             {/* Gradient Subtitle */}
-            <p className="
-            text-sm md:text-base 
-            font-medium
-            leading-relaxed
-            bg-gradient-to-b 
-            from-[#cf3d9c] 
-            via-[#b44bb2] 
-            to-[#5b38c6]
-            bg-clip-text 
-            text-transparent
-          ">
-              Innovative solutions designed to enhance efficiency, security, and performance across every system.
+            <p
+              className="italic"
+              style={{
+                fontFamily: 'Poppins',
+                fontWeight: 500,
+                fontSize: '20px',
+                lineHeight: '1.6',
+                letterSpacing: '0%',
+                background: 'linear-gradient(225deg, #F76680 0%, #57007B 100%)',
+                WebkitBackgroundClip: 'text',
+                WebkitTextFillColor: 'transparent',
+                backgroundClip: 'text'
+              }}
+            >
+              Innovative solutions designed to enhance efficiency, <br className="hidden lg:block" />
+              security, and performance across every system.
             </p>
 
           </div>
@@ -72,40 +113,49 @@ const ServicesSection = () => {
         </div>
 
         {/* DESKTOP CAROUSEL (Hidden on mobile/tablet) */}
-        <div className="hidden lg:block relative overflow-hidden px-[20px]">
+        <div ref={containerRef} className="hidden lg:block relative overflow-hidden px-[20px]">
           <div
-            className="flex items-center transition-transform duration-700 ease-in-out"
+            className={`flex items-center ${isTransitioning ? "transition-transform duration-700 ease-in-out" : ""}`}
             style={{
               gap: `${GAP}px`,
               transform: `translateX(${translateX}px)`,
             }}
           >
-            {services.map((service, idx) => {
+            {extendedServices.map((service, idx) => {
               const isActive = idx === active;
 
               return (
                 <div
-                  key={service.title}
+                  key={`${service.title}-${idx}`}
                   onClick={() => handleSelect(idx)}
-                  className={`relative shrink-0 rounded-2xl bg-white p-7 shadow-lg transition-all duration-500 cursor-pointer mb-10 mt-10
+                  className={`relative shrink-0 rounded-2xl bg-white pt-[38px] pb-[38px] px-[16px] flex flex-col gap-[10px] shadow-lg transition-all duration-500 cursor-pointer mb-10 mt-10
 
                     ${isActive
                       ? "border-2 border-[#c63f9d] scale-105 z-10"
                       : "opacity-60 scale-95"
                     }
                   `}
-                  style={{ width: `${CARD_WIDTH}px` }}
+                  style={{ width: `${CARD_WIDTH}px`, height: '287px' }}
                 >
                   {/* Icon */}
-                  <div className="mb-5 flex h-12 w-12 items-center justify-center rounded-full border border-[#c63f9d]/50">
+                  <div
+                    className="flex items-center justify-center rounded-full border border-[#c63f9d]/50 shrink-0"
+                    style={{ width: '58px', height: '58px', borderWidth: '1px' }}
+                  >
                     <img src={service.icon} alt={service.title} className="h-6 w-6" />
                   </div>
 
-                  <h3 className={`text-lg font-semibold ${isActive ? "text-[#c63f9d]" : "text-[#172136]"}`}>
+                  <h3
+                    className={`${isActive ? "text-[#c63f9d]" : "text-[#172136]"}`}
+                    style={{ fontFamily: 'Poppins', fontWeight: 600, fontSize: '20px', lineHeight: '137%', letterSpacing: '0%' }}
+                  >
                     {service.title}
                   </h3>
 
-                  <p className="mt-3 text-sm leading-relaxed text-[#4b5263]">
+                  <p
+                    className="text-sm leading-relaxed text-[#4b5263]"
+                    style={{ fontFamily: 'Poppins', fontWeight: 400, fontSize: '14px', lineHeight: '162%', letterSpacing: '0%' }}
+                  >
                     {service.description}
                   </p>
 
@@ -123,17 +173,27 @@ const ServicesSection = () => {
           {services.map((service, idx) => (
             <div
               key={service.title}
-              className="rounded-2xl bg-white p-6 shadow-md border border-gray-100"
+              className="rounded-2xl bg-white pt-[38px] pb-[38px] px-[16px] flex flex-col gap-[10px] shadow-md border border-gray-100"
+              style={{ height: '287px' }}
             >
-              <div className="mb-4 flex h-12 w-12 items-center justify-center rounded-full border border-[#c63f9d]/50">
+              <div
+                className="flex items-center justify-center rounded-full border border-[#c63f9d]/50 shrink-0"
+                style={{ width: '58px', height: '58px', borderWidth: '1px' }}
+              >
                 <img src={service.icon} alt={service.title} className="h-6 w-6" />
               </div>
 
-              <h3 className="text-lg font-semibold text-[#172136]">
+              <h3
+                className="text-[#172136]"
+                style={{ fontFamily: 'Poppins', fontWeight: 600, fontSize: '20px', lineHeight: '137%', letterSpacing: '0%' }}
+              >
                 {service.title}
               </h3>
 
-              <p className="mt-3 text-sm leading-relaxed text-[#4b5263]">
+              <p
+                className="text-sm leading-relaxed text-[#4b5263]"
+                style={{ fontFamily: 'Poppins', fontWeight: 400, fontSize: '14px', lineHeight: '162%', letterSpacing: '0%' }}
+              >
                 {service.description}
               </p>
             </div>
@@ -146,30 +206,48 @@ const ServicesSection = () => {
           <div className="w-40" />
 
           {/* DOTS */}
-          <div className="flex gap-3">
+          <div className="flex gap-4 items-center">
             {services.map((_, idx) => (
               <button
                 key={idx}
-                onClick={() => handleSelect(idx)}
-                className={`h-3 w-3 rounded-full transition
-                  ${idx === active ? "bg-[#c63f9d]" : "border border-[#c63f9d]"}
+                onClick={() => handleSelect(idx + total)}
+                className={`rounded-full transition-all duration-300 border-[#c63f9d]
+                  ${idx === displayIndex ? "bg-[#c63f9d] h-[18px] w-[18px]" : "bg-transparent border h-[13px] w-[13px]"}
                 `}
+                style={{ borderWidth: '1px' }}
               />
             ))}
           </div>
 
           {/* PROGRESS */}
-          <div className="flex items-center gap-3 text-[#6f6fa3]">
-            <span>{String(active + 1).padStart(2, "0")}</span>
+          <div className="flex items-center gap-3">
+            <span
+              style={{
+                color: '#A0AEC0',
+                fontFamily: 'Inter',
+                fontWeight: 500,
+                fontSize: '16px',
+                lineHeight: '25px',
+                letterSpacing: '0%'
+              }}
+            >
+              {String(displayIndex + 1).padStart(2, "0")}
+            </span>
 
-            <div className="relative h-[3px] w-32 bg-[#e1e3f0]">
+            <div className="relative h-[4px] w-32 bg-[#e1e3f0] rounded-full overflow-hidden">
               <div
-                className="absolute left-0 top-0 h-full bg-[#c63f9d] transition-all duration-500"
-                style={{ width: `${((active + 1) / total) * 100}%` }}
+                className="absolute left-0 top-0 h-full transition-all duration-500"
+                style={{
+                  width: `${((displayIndex + 1) / total) * 100}%`,
+                  background: '#57007B'
+                }}
               />
             </div>
 
-            <span className="font-medium text-[#5b38c6]">
+            <span
+              className="font-bold"
+              style={{ color: '#57007B', fontFamily: 'Inter', fontSize: '16px' }}
+            >
               {String(total).padStart(2, "0")}
             </span>
           </div>

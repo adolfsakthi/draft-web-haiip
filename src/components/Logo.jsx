@@ -1,13 +1,13 @@
 import React from "react";
 import logo from "../assets/images/layout/FinalLogo2.png";
 
-export const Logo = () => {
+export const Logo = ({ className = "" }) => {
     return (
-        <div className="flex items-center">
+        <div className={`flex items-center ${className}`}>
             <img
                 src={logo}
                 alt="Hezee Access Logo"
-                className="h-9 md:h-[45px] w-auto"
+                className="h-full w-full object-contain"
             />
         </div>
     );

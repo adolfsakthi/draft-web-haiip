@@ -1,79 +1,226 @@
 export default function ContactSection() {
   return (
-    <section className="relative w-full bg-gradient-to-r from-[#0b1220] to-[#101a2c] py-16 md:py-28">
+    <section className="relative w-full bg-[#0f1729] py-20 md:py-28">
 
-      <div className="max-w-[1400px] mx-auto flex flex-col lg:flex-row items-center lg:items-start justify-between px-6 lg:px-16 gap-12 lg:gap-0">
+      <div className="max-w-[1440px] mx-auto flex flex-col lg:flex-row items-start justify-between px-6 lg:px-20 gap-16 lg:gap-20">
 
         {/* LEFT CONTENT */}
-        <div className="w-full max-w-[620px]">
+        <div className="w-full lg:w-1/2 max-w-[600px]">
 
-          <h2 className="text-white text-[32px] md:text-[56px] leading-[1.1] font-semibold" style={{ fontFamily: 'Zen Dots, sans-serif' }}>
-            We're Here To <br />
-            Connect And <br />
+          <h2
+            className="text-white leading-[1.15] mb-8"
+            style={{
+              fontFamily: 'Zen Dots, sans-serif',
+              fontSize: '56px',
+              fontWeight: 400
+            }}
+          >
+            We're Here To<br />
+            Connect And<br />
             Assist You
           </h2>
 
-          <p className="mt-6 md:mt-8 text-base md:text-lg text-gray-300 max-w-[520px] leading-relaxed">
+          <p
+            className="text-gray-300 mb-16 max-w-[480px]"
+            style={{
+              fontFamily: 'Poppins',
+              fontSize: '20px',
+              fontWeight: 400,
+              lineHeight: '30px',
+              letterSpacing: '0%'
+            }}
+          >
             Have questions about the summit? Need help with registration or travel? Our team is ready to assist you.
           </p>
 
           {/* CONTACT INFO GRID */}
-          <div className="mt-10 md:mt-14 grid grid-cols-1 sm:grid-cols-2 gap-x-12 gap-y-8 text-white">
+          <div className="grid grid-cols-1 sm:grid-cols-2  gap-y-10 text-white">
 
             {/* PHONE */}
             <div>
-              <h4 className="text-lg font-semibold tracking-wide mb-1">PHONE</h4>
-              <p className="text-base text-gray-300 leading-tight">+91 9036122890</p>
+              <h4
+                className="mb-2"
+                style={{
+                  fontFamily: 'Zen Dots',
+                  fontSize: '24px',
+                  fontWeight: 400,
+                  lineHeight: '100%',
+                  letterSpacing: '0%',
+                  textTransform: 'uppercase'
+                }}
+              >
+                PHONE
+              </h4>
+              <p
+                className="text-gray-300"
+                style={{
+                  fontFamily: 'Poppins',
+                  fontSize: '20px',
+                  fontWeight: 400,
+                  lineHeight: '30px',
+                  letterSpacing: '0%'
+                }}
+              >
+                +91 9036122890
+              </p>
             </div>
 
             {/* WHATSAPP */}
-            <div>
-              <h4 className="text-lg font-semibold tracking-wide mb-1">WHATSAPP</h4>
-              <p className="text-base text-gray-300 leading-tight">+91 9036122890</p>
+            <div className="-ml-40">
+              <h4
+                className="mb-2"
+                style={{
+                  fontFamily: 'Zen Dots',
+                  fontSize: '24px',
+                  fontWeight: 400,
+                  lineHeight: '100%',
+                  letterSpacing: '0%',
+                  textTransform: 'uppercase'
+                }}
+              >
+                WHATSAPP
+              </h4>
+              <p
+                className="text-gray-300"
+                style={{
+                  fontFamily: 'Poppins',
+                  fontSize: '20px',
+                  fontWeight: 400,
+                  lineHeight: '30px',
+                  letterSpacing: '0%'
+                }}
+              >
+                +91 9036122890
+              </p>
             </div>
 
             {/* EMAIL */}
             <div>
-              <h4 className="text-lg font-semibold tracking-wide mb-1">EMAIL</h4>
-              <p className="text-base text-gray-300 leading-tight">support@hezee.co.in</p>
-            </div>
-
-            {/* ADDRESS */}
-            {/* ADDRESS */}
-            <div>
-              <h4 className="text-lg font-semibold tracking-wide mb-1">ADDRESS</h4>
-              <p className="text-base text-gray-300 leading-snug whitespace-normal sm:whitespace-nowrap">
-                Richi Complex, No-131, 2nd Floor <br />
-                St.Anthony's Road, 5th Main, 4th Cross <br />
-                Chinnappa Layout, Kammanahalli <br />
-                St.Thomas Town, Bangalore–560084
+              <h4
+                className="mb-2"
+                style={{
+                  fontFamily: 'Zen Dots',
+                  fontSize: '24px',
+                  fontWeight: 400,
+                  lineHeight: '100%',
+                  letterSpacing: '0%',
+                  textTransform: 'uppercase'
+                }}
+              >
+                EMAIL
+              </h4>
+              <p
+                className="text-gray-300"
+                style={{
+                  fontFamily: 'Poppins',
+                  fontSize: '20px',
+                  fontWeight: 400,
+                  lineHeight: '30px',
+                  letterSpacing: '0%'
+                }}
+              >
+                support@hezee.co.in
               </p>
             </div>
 
+            {/* ADDRESS */}
+            <div className="-ml-40">
+              <h4
+                className="mb-2"
+                style={{
+                  fontFamily: 'Zen Dots',
+                  fontSize: '24px',
+                  fontWeight: 400,
+                  lineHeight: '100%',
+                  letterSpacing: '0%',
+                  textTransform: 'uppercase'
+                }}
+              >
+                ADDRESS
+              </h4>
+              <p
+                className="text-gray-300"
+                style={{
+                  fontFamily: 'Poppins',
+                  fontSize: '20px',
+                  fontWeight: 400,
+                  lineHeight: '30px',
+                  letterSpacing: '0%',
+                  whiteSpace: 'nowrap'
+                }}
+              >
+                Richi Complex, No-131, 2nd Floor<br />
+                St.Anthony's Road, 5th Main, 4th cross<br />
+                Chinnappa Layout, Kammanahalli,<br />
+                St.Thomas Town, Bangalore–560084
+              </p>
+            </div>
 
           </div>
 
         </div>
 
         {/* RIGHT FORM CARD */}
-        <div className="w-full max-w-[520px] bg-white rounded-[30px] md:rounded-[60px] p-8 md:p-14 shadow-2xl">
+        <div
+          className="bg-white shadow-2xl"
+          style={{
+            width: '533px',
+            height: '608px',
+            borderRadius: '50px',
+            padding: '48px',
+            gap: '10px',
+            opacity: 1
+          }}
+        >
 
-          <h3 className="text-2xl font-semibold text-black mb-2">
+          <h3
+            className="text-black"
+            style={{
+              fontFamily: 'Zen Dots',
+              fontSize: '26px',
+              fontWeight: 400,
+              lineHeight: '30px',
+              letterSpacing: '0%',
+              textTransform: 'uppercase',
+              marginBottom: '16px'
+            }}
+          >
             GET IN TOUCH
           </h3>
 
-          <p className="text-gray-600 mb-8 md:mb-12 text-sm md:text-base">
+          <p
+            className="text-gray-600"
+            style={{
+              fontFamily: 'Poppins',
+              fontSize: '20px',
+              fontWeight: 400,
+              lineHeight: '30px',
+              letterSpacing: '0%',
+              marginBottom: '32px'
+            }}
+          >
             Have questions about our software solutions?
           </p>
 
           {/* FORM */}
-          <form className="space-y-6 md:space-y-10">
+          <form style={{ display: 'flex', flexDirection: 'column', gap: '24px' }}>
 
             <div>
               <input
                 type="text"
                 placeholder="Name"
-                className="w-full border-b border-gray-400 py-2 md:py-3 text-base md:text-lg outline-none focus:border-black transition-colors"
+                className="border-b border-gray-300 outline-none focus:border-gray-600 transition-colors placeholder-gray-400"
+                style={{
+                  width: '420px',
+                  height: '40px',
+                  fontFamily: 'Poppins',
+                  fontSize: '20px',
+                  fontWeight: 400,
+                  lineHeight: '30px',
+                  letterSpacing: '0%',
+                  opacity: 1,
+                  gap: '10px'
+                }}
                 required
               />
             </div>
@@ -82,7 +229,18 @@ export default function ContactSection() {
               <input
                 type="email"
                 placeholder="Email"
-                className="w-full border-b border-gray-400 py-2 md:py-3 text-base md:text-lg outline-none focus:border-black transition-colors"
+                className="border-b border-gray-300 outline-none focus:border-gray-600 transition-colors placeholder-gray-400"
+                style={{
+                  width: '420px',
+                  height: '40px',
+                  fontFamily: 'Poppins',
+                  fontSize: '20px',
+                  fontWeight: 400,
+                  lineHeight: '30px',
+                  letterSpacing: '0%',
+                  opacity: 1,
+                  gap: '10px'
+                }}
                 required
               />
             </div>
@@ -91,7 +249,18 @@ export default function ContactSection() {
               <input
                 type="text"
                 placeholder="Subject"
-                className="w-full border-b border-gray-400 py-2 md:py-3 text-base md:text-lg outline-none focus:border-black transition-colors"
+                className="border-b border-gray-300 outline-none focus:border-gray-600 transition-colors placeholder-gray-400"
+                style={{
+                  width: '420px',
+                  height: '40px',
+                  fontFamily: 'Poppins',
+                  fontSize: '20px',
+                  fontWeight: 400,
+                  lineHeight: '30px',
+                  letterSpacing: '0%',
+                  opacity: 1,
+                  gap: '10px'
+                }}
               />
             </div>
 
@@ -99,13 +268,32 @@ export default function ContactSection() {
               <textarea
                 placeholder="Message"
                 rows="1"
-                className="w-full border-b border-gray-400 py-2 md:py-3 text-base md:text-lg outline-none focus:border-black transition-colors resize-none"
+                className="border-b border-gray-300 outline-none focus:border-gray-600 transition-colors resize-none placeholder-gray-400"
+                style={{
+                  width: '420px',
+                  height: '40px',
+                  fontFamily: 'Poppins',
+                  fontSize: '20px',
+                  fontWeight: 400,
+                  lineHeight: '30px',
+                  letterSpacing: '0%',
+                  opacity: 1,
+                  gap: '10px'
+                }}
               />
             </div>
 
             <button
               type="submit"
-              className="mt-8 md:mt-12 w-full bg-[#0b1220] text-white py-3 md:py-4 rounded-xl text-base md:text-lg font-semibold hover:bg-black transition active:scale-95"
+              className="bg-[#0f1729] text-white rounded-9 hover:bg-[#1a2438] transition-colors active:scale-[0.98]"
+              style={{
+                width: '420px',
+                padding: '16px',
+                fontFamily: 'Poppins',
+                fontSize: '20px',
+                fontWeight: 500,
+                marginTop: '16px'
+              }}
             >
               Send message
             </button>

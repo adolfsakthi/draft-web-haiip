@@ -38,29 +38,74 @@ const SmartOrbit = () => {
 
   return (
     <section className="relative flex justify-center bg-white py-24 overflow-hidden">
-      <div className="relative w-[1300px]">
+      {/* DECOR IMAGE (Left) */}
+      <img
+        src="/slides/bluestar.png"
+        alt=""
+        style={{
+          width: '190px',
+          height: '190px',
+          left: '-82px',
+          top: '10%',
+          transform: 'rotate(-180deg)',
+          opacity: 1,
+          objectFit: 'contain'
+        }}
+        className="absolute pointer-events-none z-0"
+      />
+      <div className="relative w-full max-w-[1440px] px-6 lg:px-20">
 
         {/* HEADER */}
-        <div className="mb-8 flex flex-col md:flex-row items-start justify-between z-20 relative px-6 md:px-10">
-          <div className="flex items-center gap-4 text-3xl md:text-5xl font-bold text-black">
-            <img src="/Star.png" alt="star" className="w-10 h-10 md:w-14 md:h-14 object-contain" />
-            <h2 style={{ fontFamily: "Zen Dots, sans-serif" }}>
-              Explore our product categories
-            </h2>
-            <p
-              className="
-                text-base md:text-lg italic font-medium leading-relaxed
-                bg-gradient-to-b from-[#cf3d9c] via-[#b44bb2] to-[#5b38c6]
-                bg-clip-text text-transparent
-              "
+        <div className="relative z-10 flex flex-col lg:flex-row justify-between items-start mb-12 -mt-10 gap-8 lg:gap-0">
+
+          {/* LEFT TITLE */}
+          <div className="flex items-center gap-4 lg:-ml-6">
+            <img
+              src="/Star.png"
+              alt="star"
+              className="w-14 h-14 object-contain"
+            />
+            <h2
+              className="text-5xl font-normal text-black"
+              style={{ fontFamily: 'Zen Dots, sans-serif' }}
             >
-              Access control, video surveillance, gates, vehicle inspection and more.
+              Explore our product <br className="hidden lg:block" /> categories
+            </h2>
+          </div>
+
+          {/* RIGHT TAGLINE */}
+          <div className="relative flex max-w-2xl gap-5 mt-14 lg:ml-32">
+
+            {/* Vertical Accent Line */}
+            <div
+              className="h-[50px] md:h-[70px] w-[3px]"
+              style={{ background: 'linear-gradient(225deg, #F76680 0%, #57007B 100%)' }}
+            />
+
+            {/* Gradient Subtitle */}
+            <p
+              className="italic"
+              style={{
+                fontFamily: 'Poppins',
+                fontWeight: 500,
+                fontSize: '16px',
+                lineHeight: '1.6',
+                letterSpacing: '0%',
+                background: 'linear-gradient(225deg, #F76680 0%, #57007B 100%)',
+                WebkitBackgroundClip: 'text',
+                WebkitTextFillColor: 'transparent',
+                backgroundClip: 'text'
+              }}
+            >
+              Access control, video surveillance, gates, vehicle <br className="hidden lg:block" />
+              inspection and more.
             </p>
           </div>
+
         </div>
 
         {/* ================= EXACT IMAGE REPLICATION ================= */}
-        <div className="relative w-full h-[650px] mt-10 select-none">
+        <div className="relative w-full h-[650px] mt-20 select-none">
 
           {/* ORBITAL LINES (SVG) */}
           {/* These paths approximate the 4 curves seen in the image */}

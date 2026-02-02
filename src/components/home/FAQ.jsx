@@ -19,11 +19,11 @@ const faqs = [
   },
   {
     q: "Can you lead a project end-to-end or work within a team?",
-    a: "I’m comfortable leading full lifecycle projects as well as collaborating within cross-functional teams.",
+    a: "I'm comfortable leading full lifecycle projects as well as collaborating within cross-functional teams.",
   },
   {
     q: "Are you available for freelance or full-time roles?",
-    a: "Yes, I’m open to freelance, contract, and full-time opportunities depending on project scope and alignment.",
+    a: "Yes, I'm open to freelance, contract, and full-time opportunities depending on project scope and alignment.",
   },
 ];
 
@@ -31,35 +31,63 @@ const FAQSection = () => {
   const [openIndex, setOpenIndex] = useState(0);
 
   return (
-    <section className="flex justify-center bg-[#fbfaff] py-24">
-      <div className="w-[1440px]">
+    <section className="relative flex justify-center bg-[#fbfaff] py-24 overflow-hidden">
+      <div className="relative w-full max-w-[1440px] px-6 lg:px-20">
 
         {/* HEADER */}
-        <div className="flex justify-between items-start mb-20">
+        <div className="relative z-10 flex flex-col lg:flex-row justify-between items-start mb-16 -mt-10 gap-8 lg:gap-0">
 
           {/* LEFT TITLE */}
-          <div className="flex items-center gap-4">
+          <div className="flex items-center gap-4 lg:-ml-6">
             <img
               src="/Star.png"
               alt="star"
               className="w-14 h-14 object-contain"
             />
-            <h2 className="text-5xl font-bold text-black" style={{ fontFamily: 'Zen Dots, sans-serif' }}>
+            <h2
+              className="text-5xl font-normal text-black"
+              style={{ fontFamily: 'Zen Dots, sans-serif' }}
+            >
               FAQ's
             </h2>
           </div>
 
           {/* RIGHT TAGLINE */}
-          <div className="relative pl-6 max-w-[320px]">
-            <div className="absolute left-0 top-1 h-[85%] w-[3px] bg-[#cf3d9c]" />
-            <p className="text-[#b0398d] text-lg italic leading-relaxed">
+          <div className="relative flex max-w-2xl gap-5 mt-14 lg:ml-32">
+
+            {/* Vertical Accent Line */}
+            <div
+              style={{
+                width: '3px',
+                height: '36px',
+                opacity: 1,
+                background: 'linear-gradient(225deg, #F76680 0%, #57007B 100%)'
+              }}
+            />
+
+            {/* Gradient Subtitle */}
+            <p
+              style={{
+                fontFamily: 'Poppins',
+                fontWeight: 500,
+                fontStyle: 'italic',
+                fontSize: '24px',
+                lineHeight: '100%',
+                letterSpacing: '0%',
+                background: 'linear-gradient(225deg, #F76680 0%, #57007B 100%)',
+                WebkitBackgroundClip: 'text',
+                WebkitTextFillColor: 'transparent',
+                backgroundClip: 'text'
+              }}
+            >
               Your questions, our answers
             </p>
           </div>
+
         </div>
 
         {/* FAQ LIST */}
-        <div className="space-y-2">
+        <div className="space-y-0 mt-12">
 
           {faqs.map((item, idx) => {
             const isOpen = openIndex === idx;
@@ -69,36 +97,116 @@ const FAQSection = () => {
 
                 {/* OPEN FAQ */}
                 {isOpen ? (
-                  <div className="bg-white rounded-2xl px-8 py-7 shadow-sm">
+                  <div
+                    style={{
+                      width: '1280px',
+                      padding: '8.83px 17.66px 17.66px 17.66px',
+                      gap: '17.66px',
+                      borderRadius: '17.66px',
+                      backgroundColor: '#fff',
+                      opacity: 1
+                    }}
+                  >
 
                     {/* QUESTION ROW */}
-                    <div className="flex justify-between items-start">
-                      <h3 className="text-xl font-semibold text-black">
+                    <div
+                      style={{
+                        display: 'flex',
+                        justifyContent: 'space-between',
+                        alignItems: 'start',
+                        padding: '8.83px 0',
+                        marginBottom: '17.66px'
+                      }}
+                    >
+                      <h3
+                        style={{
+                          fontFamily: 'Poppins',
+                          fontWeight: 400,
+                          fontSize: '24px',
+                          lineHeight: '100%',
+                          letterSpacing: '0%',
+                          color: '#000'
+                        }}
+                      >
                         {item.q}
                       </h3>
                       <button
                         onClick={() => setOpenIndex(null)}
-                        className="text-2xl font-medium text-black"
+                        style={{
+                          width: '36.78px',
+                          height: '36.78px',
+                          opacity: 1,
+                          display: 'flex',
+                          alignItems: 'center',
+                          justifyContent: 'center',
+                          border: 'none',
+                          background: 'transparent',
+                          cursor: 'pointer',
+                          fontSize: '24px',
+                          color: '#000'
+                        }}
+                        className="hover:opacity-70 transition-opacity"
                       >
                         ×
                       </button>
                     </div>
 
                     {/* ANSWER */}
-                    <p className="mt-6 text-[#444] text-base leading-relaxed max-w-[1100px]">
+                    <p
+                      style={{
+                        fontFamily: 'Poppins',
+                        fontWeight: 400,
+                        fontSize: '20.91px',
+                        lineHeight: '100%',
+                        letterSpacing: '0%',
+                        color: '#444'
+                      }}
+                    >
                       {item.a}
                     </p>
                   </div>
                 ) : (
                   /* CLOSED FAQ */
                   <div
-                    className="flex justify-between items-center py-6 border-b border-black cursor-pointer"
+                    style={{
+                      width: '1280px',
+                      display: 'flex',
+                      justifyContent: 'space-between',
+                      alignItems: 'center',
+                      padding: '17.66px 0',
+                      borderBottom: '0.74px solid #000',
+                      cursor: 'pointer',
+                      opacity: 1
+                    }}
+                    className="hover:opacity-70 transition-opacity"
                     onClick={() => setOpenIndex(idx)}
                   >
-                    <h3 className="text-xl text-black">
+                    <h3
+                      style={{
+                        fontFamily: 'Poppins',
+                        fontWeight: 400,
+                        fontSize: '24px',
+                        lineHeight: '100%',
+                        letterSpacing: '0%',
+                        color: '#000'
+                      }}
+                    >
                       {item.q}
                     </h3>
-                    <span className="text-2xl font-medium text-black">+</span>
+                    <span
+                      style={{
+                        width: '36.78px',
+                        height: '36.78px',
+                        opacity: 1,
+                        display: 'flex',
+                        alignItems: 'center',
+                        justifyContent: 'center',
+                        fontSize: '24px',
+                        color: '#000'
+                      }}
+                    >
+                      +
+                    </span>
                   </div>
                 )}
 

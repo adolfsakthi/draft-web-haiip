@@ -25,38 +25,78 @@ const HeroBanner = () => {
         {/* Accent Lines Removed */}
 
         {/* Content */}
-        <div className="relative flex h-full w-full flex-col items-center justify-start pt-44 md:pt-52 text-center text-[#152033] px-4 md:px-6">
+        <div className="relative flex h-full w-full flex-col items-center justify-start pt-24 md:pt-44 text-center text-[#152033] px-4 md:px-6">
 
 
           <h1
-            className="max-w-4xl mx-auto text-3xl md:text-[45px] font-bold leading-tight md:leading-[58px] drop-shadow-sm"
+            className="max-w-6xl mx-auto text-2xl md:text-[45px] font-bold text-center drop-shadow-sm"
             style={{
               fontFamily: "'Poppins', sans-serif",
+              fontWeight: 700,
+              fontSize: "45px",
+              lineHeight: "58px",
+              letterSpacing: "0%",
               color: "rgba(47, 72, 88, 1)",
             }}
           >
-            Innovating the Future with Smart Software & Reliable Security Hardware
+            Innovating the Future with Smart Software & <br className="hidden md:block" />
+            Reliable Security Hardware
           </h1>
 
-          <p className="mt-2 max-w-3xl text-base sm:text-lg md:text-xl font-semibold text-[#5f677f] px-2">
-            From advanced surveillance systems to intelligent software — we deliver end-to-end technology for businesses.
+          <p
+            className="mt-4 max-w-4xl px-2"
+            style={{
+              fontFamily: "'Poppins', sans-serif",
+              fontWeight: 400,
+              fontSize: "20px",
+              lineHeight: "24.5px",
+              letterSpacing: "0%",
+              textAlign: "center",
+              color: "#5f677f"
+            }}
+          >
+            From advanced surveillance systems to intelligent software — we deliver end-to-end <br className="hidden md:block" />
+            technology for businesses.
           </p>
 
-          <div className="mt-4 flex flex-col sm:flex-row items-center justify-center gap-6 md:gap-10 w-full sm:w-auto">
+          <div className="mt-5 flex flex-col sm:flex-row items-center justify-center gap-4 md:gap-7 w-full sm:w-auto">
 
             {/* SOFTWARE BUTTON */}
-            {/* SOFTWARE BUTTON */}
-            <div className="bg-[rgba(47,72,88,0.1)] rounded-[8px] p-[10px] w-full sm:w-auto">
-              <button className="w-full sm:w-auto rounded-xl bg-[#7DC242] px-8 py-4 text-base md:text-lg font-semibold text-white transition hover:-translate-y-1">
-                Explore Software Solutions
-              </button>
+            <div className="p-[9px] rounded-[12px] border border-[#E2E8F0] bg-[#2F48580D] w-full sm:w-auto shadow-sm">
+              <div className="p-[10px] rounded-[12px] border border-[#E2E8F0] bg-[#2F48581A]">
+                <button
+                  className="flex items-center justify-center w-full sm:min-w-[302px] sm:w-auto h-[46px] rounded-[8px] bg-[#99C331] px-[20px] py-[10px] text-white whitespace-nowrap transition hover:opacity-90 active:scale-95 shadow-sm"
+                  style={{
+                    fontFamily: "'Lato', sans-serif",
+                    fontWeight: 500,
+                    fontSize: "22px",
+                    lineHeight: "100%",
+                    letterSpacing: "0%",
+                    gap: "10px"
+                  }}
+                >
+                  Explore Software Solutions
+                </button>
+              </div>
             </div>
 
             {/* SECURITY BUTTON */}
-            <div className="bg-[rgba(47,72,88,0.1)] rounded-[8px] p-[10px] w-full sm:w-auto">
-              <button className="w-full sm:w-auto rounded-xl bg-[rgba(43,42,75,1)] px-8 py-4 text-base md:text-lg font-semibold text-white transition hover:-translate-y-1">
-                Explore Security Products
-              </button>
+            <div className="p-[10px] rounded-[12px] border border-[#E2E8F0] bg-[#2F48580D] w-full sm:w-auto shadow-sm">
+              <div className="p-[10px] rounded-[12px] border border-[#E2E8F0] bg-[#2F48581A]">
+                <button
+                  className="flex items-center justify-center w-full sm:min-w-[302px] sm:w-auto h-[46px] rounded-[8px] bg-[#2B2A4B] px-[20px] py-[10px] text-white whitespace-nowrap transition hover:opacity-90 active:scale-95 shadow-sm"
+                  style={{
+                    fontFamily: "'Lato', sans-serif",
+                    fontWeight: 500,
+                    fontSize: "22px",
+                    lineHeight: "100%",
+                    letterSpacing: "0%",
+                    gap: "10px"
+                  }}
+                >
+                  Explore Security Products
+                </button>
+              </div>
             </div>
 
           </div>

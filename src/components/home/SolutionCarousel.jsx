@@ -5,50 +5,104 @@ const solutionCards = [
   { title: "HRMS cum Payroll Management System", image: "/slides/hrms.png", path: "/hr-management" },
   { title: "Leave Management System", image: "/slides/leave.png", path: "/leave-management" },
   { title: "Hotel Management System", image: "/slides/hotel.png", path: "/hotel-management" },
-  { title: "Canteen Management System", image: "/slides/canteen.png", path: "/" },
+  { title: "Canteen Management System", image: "/slides/canteen.png", path: "/canteen-management" },
   { title: "GYM Management System", image: "/slides/gym.png", path: "/gym-management" },
-  { title: "Campus Management System", image: "/slides/campus.png", path: "/" },
+  { title: "Campus Management System", image: "/slides/campus.png", path: "/campus-management" },
   { title: "Visitor Management System", image: "/slides/visitor.png", path: "/visitor-management" },
 ];
 
 const SolutionCarousel = () => {
   return (
-    <section className="flex justify-center bg-white overflow-hidden mt-2 mb-2">
+    <section className="flex justify-center bg-white overflow-hidden pb-10 -mt-20">
       {/* SECTION FRAME */}
-      <div className="max-w-[1400px] w-full h-[266px] overflow-hidden px-4">
-        {/* SCROLL CONTAINER */}
+      <div className="max-w-[1400px] w-full min-h-[380px] overflow-hidden px-4">
         {/* MARQUEE CONTAINER */}
-        <div className="flex h-full gap-5 animate-marquee">
-          {/* First Set of Cards */}
-          {[...solutionCards, ...solutionCards].map((card, idx) => (
-            <Link
-              key={`${card.title}-${idx}`}
-              to={card.path}
-              className={`
-                shrink-0 
-                w-[190px] h-[224px]
-                rounded-2xl 
-                bg-gradient-to-b from-[#0f1c3f] to-[#0c1534]
-                shadow-xl 
-                flex flex-col items-center justify-between
-                ${idx % 2 === 0 ? "mt-1" : "mt-9"}
-                hover:scale-105 transition-transform duration-300
-              `}
-            >
-              {/* Image */}
-              <img
-                src={card.image}
-                alt={card.title}
-                loading="lazy"
-                className="
-                rounded-l 
-                shadow-xl 
-                object-contain
-                max-h-[300px]
-              "
-              />
-            </Link>
-          ))}
+        <div className="flex h-full gap-8 animate-marquee items-start pt-4">
+          {[...solutionCards, ...solutionCards].map((card, idx) => {
+            const isEven = idx % 2 === 0;
+
+            return (
+              <Link
+                key={`${card.title}-${idx}`}
+                to={card.path}
+                className={`
+                  shrink-0 
+                  w-[193px] h-[240px]
+                  rounded-[12px]
+                  border border-white/20
+                  shadow-2xl
+                  flex flex-col justify-between
+                  p-4
+                  transition-all duration-300 hover:scale-105
+                  ${isEven ? "mt-0" : "mt-12"}
+                `}
+                style={{
+                  backgroundImage: 'url(/slides/bg.jpg)',
+                  backgroundSize: 'cover',
+                  backgroundPosition: 'center',
+                  backgroundRepeat: 'no-repeat'
+                }}
+              >
+                {isEven ? (
+                  <>
+                    {/* TOP: Logo */}
+                    <div className="bg-white rounded-[5px] h-[32px] flex justify-center items-center shadow-sm w-full">
+                      <img
+                        src="/logo.png"
+                        alt="Hezee Access"
+                        className="h-[22px] object-contain"
+                      />
+                    </div>
+
+                    {/* MIDDLE: Title */}
+                    <div className="flex-1 flex items-center justify-center">
+                      <h3 className="text-white text-center font-bold line-clamp-2" style={{ fontFamily: 'Poppins', fontSize: '14px', lineHeight: '13px', fontWeight: 700, letterSpacing: '0%' }}>
+                        {card.title}
+                      </h3>
+                    </div>
+
+                    {/* BOTTOM: Image (IMAGE ONLY) */}
+                    <div className="w-full h-[110px] overflow-hidden rounded-[8px] bg-white">
+                      <img
+                        src={card.image}
+                        alt={card.title}
+                        loading="lazy"
+                        className="w-full h-full object-cover"
+                      />
+                    </div>
+                  </>
+                ) : (
+                  <>
+                    {/* TOP: Image (IMAGE ONLY) */}
+                    <div className="w-full h-[110px] overflow-hidden rounded-[8px] bg-white">
+                      <img
+                        src={card.image}
+                        alt={card.title}
+                        loading="lazy"
+                        className="w-full h-full object-cover"
+                      />
+                    </div>
+
+                    {/* MIDDLE: Title */}
+                    <div className="flex-1 flex items-center justify-center">
+                      <h3 className="text-white text-center font-bold line-clamp-2" style={{ fontFamily: 'Poppins', fontSize: '14px', lineHeight: '13px', fontWeight: 700, letterSpacing: '0%' }}>
+                        {card.title}
+                      </h3>
+                    </div>
+
+                    {/* BOTTOM: Logo */}
+                    <div className="bg-white rounded-[12px] h-[32px] flex justify-center items-center shadow-sm w-full">
+                      <img
+                        src="/logo.png"
+                        alt="Hezee Access"
+                        className="h-[20px] object-contain"
+                      />
+                    </div>
+                  </>
+                )}
+              </Link>
+            );
+          })}
         </div>
       </div>
     </section>

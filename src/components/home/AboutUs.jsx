@@ -20,60 +20,63 @@ const stats = [
 
 const AboutUs = () => {
   return (
-    <section className="flex justify-center bg-[#fafbff] py-16 md:py-24">
+    <section className="flex justify-center bg-[#fafbff] py-24 md:py-36 -mt-20">
       <div className="w-full max-w-[1440px] px-6 lg:px-20 overflow-hidden lg:overflow-visible">
 
         {/* TOP SECTION */}
         <div className="flex flex-col lg:flex-row justify-between items-start gap-12 lg:gap-0">
 
           {/* LEFT TITLE */}
-          <div className="flex items-center gap-4">
+          <div className="flex items-center gap-4 relative lg:-top-9 lg:-left-16">
             <img
               src="/Star.png"
               alt="star"
               className="w-10 h-10 lg:w-14 lg:h-14 object-contain"
             />
-            <h2 className="text-3xl md:text-4xl font-bold text-black" style={{ fontFamily: 'Zen Dots, sans-serif' }}>About Us</h2>
+            <h2 className="text-black" style={{ fontFamily: 'Zen Dots', fontWeight: 400, fontSize: '56px', lineHeight: '100%', letterSpacing: '0%' }}>About Us</h2>
           </div>
 
           {/* RIGHT CONTENT WITH VERTICAL LINE */}
-          <div className="relative max-w-full lg:max-w-[640px] pl-6 lg:pl-0 lg:-ml-12">
+          <div className="relative max-w-full lg:max-w-[640px] pl-6 lg:pl-0 lg:left-20">
 
             {/* Vertical Accent Line */}
-            <div className="absolute left-0 lg:left-[-60px] top-2 h-[95%] w-[3px] bg-[#cf3d9c]" />
+            <div className="absolute left-0 lg:left-[-20px] top-2 h-[95%] w-[3px] bg-[#cf3d9c]" />
 
             {/* FIRST PARAGRAPH */}
-            <p className="
-              text-[14px] md:text-[16px] 
-              italic 
-              font-medium
-              leading-relaxed
-              bg-gradient-to-b 
-              from-[#cf3d9c] 
-              via-[#b44bb2] 
-              to-[#5b38c6]
-              bg-clip-text 
-              text-transparent
-            ">
+            <p
+              className="italic"
+              style={{
+                fontFamily: 'Poppins',
+                fontWeight: 500,
+                fontSize: '16px',
+                lineHeight: '30px',
+                letterSpacing: '0%',
+                background: 'linear-gradient(225deg, #F76680 0%, #57007B 100%)',
+                WebkitBackgroundClip: 'text',
+                WebkitTextFillColor: 'transparent',
+                backgroundClip: 'text'
+              }}
+            >
               Hezee Access IT Infrastructure specializes in custom software development,
               cloud solutions, UI/UX design, and web development. We provide tailored
               digital solutions that streamline operations and enhance efficiency.
             </p>
 
             {/* SECOND PARAGRAPH */}
-            <p className="
-              mt-6 
-              text-[14px] md:text-[16px] 
-              italic 
-              font-medium
-              leading-relaxed
-              bg-gradient-to-b 
-              from-[#cf3d9c] 
-              via-[#b44bb2] 
-              to-[#5b38c6]
-              bg-clip-text 
-              text-transparent
-            ">
+            <p
+              className="mt-6 italic"
+              style={{
+                fontFamily: 'Poppins',
+                fontWeight: 500,
+                fontSize: '16px',
+                lineHeight: '30px',
+                letterSpacing: '0%',
+                background: 'linear-gradient(225deg, #F76680 0%, #57007B 100%)',
+                WebkitBackgroundClip: 'text',
+                WebkitTextFillColor: 'transparent',
+                backgroundClip: 'text'
+              }}
+            >
               We offer innovative solutions like Time & Attendance, Payroll, Hotel,
               Visitor, Inventory, Campus, and Canteen Management to streamline business
               operations. Partner with us to turn your vision into powerful software
@@ -87,40 +90,75 @@ const AboutUs = () => {
         <div className="my-12 lg:my-20 h-[1px] w-full bg-[#dfe3f5]" />
 
         {/* BOTTOM CARDS SECTION */}
-        <div className="relative flex flex-col lg:flex-row justify-center gap-8 lg:gap-0">
+        <div className="relative flex flex-col lg:flex-row justify-start items-center gap-8 lg:gap-0 mt-8 lg:ml-40">
 
           {stats.map((item, idx) => (
             <div
               key={item.title}
-              className={`
-                relative w-full max-w-[460px] lg:w-[460px] min-h-[320px] lg:h-[380px]
-                rounded-[40px] lg:rounded-[240px]
-                flex flex-col justify-center
-                px-8 lg:px-16 py-10 lg:py-0
-                bg-gradient-to-l from-[#edf3ff] to-[#f9fbff]
-                ${idx === 1 ? "lg:-mx-14 z-10" : ""}
-                ${idx === 0 ? "lg:-mt-6 z-20" : "z-0"}
-                mx-auto
-              `}
+              style={{
+                width: '380px',
+                height: '460px',
+                background: 'linear-gradient(270deg, rgba(219, 234, 254, 0.67) 0%, rgba(219, 234, 254, 0.01) 100%)',
+                borderRadius: '0 230px 230px 0', // D-shape based on 460px height
+                display: 'flex',
+                flexDirection: 'column',
+                justifyContent: 'flex-start',
+                padding: '80px 50px',
+                position: 'relative',
+                zIndex: idx === 0 ? 20 : idx === 1 ? 10 : 0,
+                marginLeft: idx === 0 ? '0' : '-20px',
+                opacity: 1
+              }}
+              className="mx-auto lg:mx-0 shadow-sm"
             >
-              {/* ICON */}
-              <div className="lg:absolute lg:top-[80px] lg:left-[80px] mb-6 lg:mb-0 flex h-14 w-14 items-center justify-center">
+              {/* ICON CONTAINER */}
+              <div
+                style={{
+                  width: '64px',
+                  height: '64px',
+                  backgroundColor: '#DBEAFE',
+                  borderRadius: '20px',
+                  display: 'flex',
+                  alignItems: 'center',
+                  justifyContent: 'center',
+                  marginBottom: '28px',
+                  opacity: 1
+                }}
+              >
                 <img
                   src="/tool.png"
                   alt=""
-                  className="h-10 w-10 object-contain rounded-full shadow-md"
+                  className="h-8 w-8 object-contain"
                 />
               </div>
 
-              {/* CONTENT WRAPPER */}
-              <div
-                className={`lg:ml-auto flex w-full lg:max-w-[320px] flex-col items-start ${idx === 0 ? "lg:mt-12" : ""}`}
-              >
-                <h3 className="text-xl lg:text-2xl font-bold text-[#182033]">
+              {/* CONTENT */}
+              <div className="flex flex-col items-start w-full" style={{ verticalAlign: 'middle', maxWidth: '300px' }}>
+                <h3
+                  style={{
+                    fontFamily: 'Poppins',
+                    fontWeight: 600,
+                    fontSize: '24px',
+                    lineHeight: '32px',
+                    letterSpacing: '0%',
+                    color: '#1e293b',
+                    margin: 0
+                  }}
+                >
                   {item.title}
                 </h3>
 
-                <p className="mt-4 text-sm lg:text-base leading-relaxed text-[#4b5263]">
+                <p
+                  style={{
+                    fontFamily: 'Poppins',
+                    fontWeight: 400,
+                    fontSize: '16px',
+                    lineHeight: '24px',
+                    letterSpacing: '0%',
+                    color: '#475569',
+                    marginTop: '20px'
+                  }}
+                >
                   {item.description}
                 </p>
               </div>
@@ -128,7 +166,7 @@ const AboutUs = () => {
           ))}
 
           {/* RIGHT PURPLE DECORATION (Hidden on mobile to prevent overflow) */}
-          <div className="hidden lg:block absolute right-[-110px] top-[-140px] pointer-events-none">
+          <div className="hidden lg:block absolute right-[-150px] top-[-150px] pointer-events-none">
             <img
               src="/about.png"
               alt=""
