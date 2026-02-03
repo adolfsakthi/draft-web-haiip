@@ -1,0 +1,18 @@
+# robots.txt for Hezee Access
+# Allow all search engines to crawl
+
+User-agent: *
+Allow: /
+
+# Sitemap location
+Sitemap: https://hezee.co.in/sitemap.xml
+
+# Crawl-delay (optional, helps prevent server overload)
+Crawl-delay: 1
+
+# Block certain bots (optional)
+User-agent: AhrefsBot
+Crawl-delay: 10
+
+User-agent: SemrushBot
+Crawl-delay: 10

@@ -90,12 +90,12 @@ export const Header = () => {
 
                                 <div className="p-2">
                                     {/* Header Section */}
-                                    <div className="bg-[#fcf5fd] rounded-lg p-3 mb-2 flex items-center gap-3">
+                                    {/* <div className="bg-[#fcf5fd] rounded-lg p-3 mb-2 flex items-center gap-3">
                                         <div className="text-[#b91c7f]">
                                             <LayoutGrid size={20} />
                                         </div>
                                         <span className="font-bold text-[#b91c7f] text-[15px]">Product category</span>
-                                    </div>
+                                    </div> */}
 
                                     {/* Product List */}
                                     <div className="flex flex-col space-y-1">

@@ -9,7 +9,7 @@ const accentLines = [
 
 const HeroBanner = () => {
   return (
-    <section className="w-full">
+    <section id="home" className="w-full">
 
       <div
         className="relative overflow-hidden w-full flex items-start py-0"

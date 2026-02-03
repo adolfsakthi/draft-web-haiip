@@ -1,16 +1,131 @@
 <!doctype html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>unified-heeze</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Poppins:wght@300;400;500;600;700&family=Zen+Dots&family=Archivo:wght@400&display=swap" rel="stylesheet">
-  </head>
-  <body>
-    <div id="root"></div>
-    <script type="module" src="/src/main.jsx"></script>
-  </body>
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- Favicon - Multiple formats for better browser & search engine support -->
+  <link rel="icon" type="image/x-icon" href="/favicon.ico" />
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+  <link rel="icon" type="image/png" sizes="96x96" href="/favicon-96x96.png" />
+  <link rel="icon" type="image/png" sizes="192x192" href="/favicon-192x192.png" />
+  <link rel="shortcut icon" href="/favicon.ico" />
+
+  <!-- Apple Touch Icons -->
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+  <link rel="apple-touch-icon" sizes="152x152" href="/apple-touch-icon-152x152.png" />
+  <link rel="apple-touch-icon" sizes="120x120" href="/apple-touch-icon-120x120.png" />
+  <link rel="apple-touch-icon" sizes="76x76" href="/apple-touch-icon-76x76.png" />
+
+  <!-- Manifest for PWA -->
+  <link rel="manifest" href="/site.webmanifest" />
+
+  <!-- Primary Meta Tags -->
+  <title>Hezee Access - HRMS, Gym, POS, Hotel & Management Software Solutions India</title>
+  <meta name="title" content="Hezee Access IT Infrastructure Pvt. Ltd. India" />
+  <meta name="description"
+    content="Leading provider of cloud-based HRMS payroll software, gym management software, restaurant POS billing, hotel PMS, production management, visitor management & canteen management software in India. Affordable solutions for small businesses in Bangalore and across India." />
+  <meta name="author" content="Hezee Access" />
+  <meta name="robots" content="index, follow" />
+
+  <!-- SEO Keywords -->
+  <meta name="keywords"
+    content="hezee hrms, hrms software for small business, hrms payroll software india, cloud hrms software india, payroll management software india, employee payroll software, attendance and payroll software, hrms software for it companies, salary payroll software india, hr payroll automation software, hrms software bangalore, payroll software bangalore, hrms software india price, gym management software india, gym billing software, gym membership management software, fitness center management software, gym software with billing, cloud gym management software, best gym software india, gym software for trainers, gym management software bangalore, gym software near me, pos billing software india, pos cum kot software, restaurant billing software, restaurant pos software india, cafe pos billing software, gst billing pos software, cloud pos software india, best pos software for restaurant, pos software bangalore, restaurant pos software bangalore, hotel management software india, hotel billing software, hotel pms software india, small hotel management software, cloud hotel management software, hotel reservation software india, production management software, manufacturing management software india, factory management software, production planning software india, manufacturing erp software small business, visitor management software india, office visitor management system, gate pass management software, corporate visitor software, canteen management software, cafeteria management system, corporate canteen software, school canteen management software, canteen billing software, best hrms software india, hrms software price india, payroll software for small business, hr payroll automation software, salary payroll software, hrms software with attendance, leave and payroll management software, pf esi payroll software, gst compliant payroll software, biometric attendance payroll software, statutory payroll software india, employee compliance software, hrms software for startups, hrms software for manufacturing, hrms software for corporate office, payroll software for sme, hrms software near me, hr payroll software india, gym management software, gym pos software, best gym management software, fitness studio management software, software for gym owners, gym management system for business, gym software for small gym, software for fitness center, gym software for gym business, gym attendance software, gym subscription management software, gym payment tracking software, trainer management software, gym crm software, fitness software bangalore" />
+
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://hezee.co.in/" />
+  <meta property="og:title" content="Hezee Access - HRMS, Gym, POS, Hotel & Management Software Solutions India" />
+  <meta property="og:description"
+    content="Leading provider of cloud-based HRMS payroll software, gym management software, restaurant POS billing, hotel PMS, production management, visitor management & canteen management software in India." />
+  <meta property="og:image" content="/favicon.png" />
+
+  <!-- Twitter -->
+  <meta property="twitter:card" content="summary_large_image" />
+  <meta property="twitter:url" content="https://hezee.co.in/" />
+  <meta property="twitter:title" content="Hezee Access - HRMS, Gym, POS, Hotel & Management Software Solutions India" />
+  <meta property="twitter:description"
+    content="Leading provider of cloud-based HRMS payroll software, gym management software, restaurant POS billing, hotel PMS, production management, visitor management & canteen management software in India." />
+  <meta property="twitter:image" content="/favicon.png" />
+
+  <!-- Additional SEO Tags -->
+  <meta name="language" content="English" />
+  <meta name="geo.region" content="IN-KA" />
+  <meta name="geo.placename" content="Bangalore" />
+  <link rel="canonical" href="https://hezee.co.in/" />
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Poppins:wght@300;400;500;600;700&family=Zen+Dots&family=Archivo:wght@400&display=swap"
+    rel="stylesheet">
+
+  <!-- JSON-LD Structured Data for SEO -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "Hezee Access IT Infrastructure Pvt. Ltd.",
+    "alternateName": "Hezee Access",
+    "url": "https://hezee.co.in",
+    "logo": "https://hezee.co.in/logo.png",
+    "description": "Leading provider of cloud-based HRMS payroll software, gym management software, restaurant POS billing, hotel PMS, production management, visitor management and canteen management software in India.",
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Bangalore",
+      "addressRegion": "Karnataka",
+      "addressCountry": "IN"
+    },
+    "contactPoint": {
+      "@type": "ContactPoint",
+      "contactType": "Customer Service",
+      "areaServed": "IN"
+    },
+    "sameAs": [
+      "https://www.facebook.com/hezeeaccess",
+      "https://www.linkedin.com/company/hezeeaccess",
+      "https://twitter.com/hezeeaccess",
+      "https://hezee.co.in"
+    ]
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "SoftwareApplication",
+    "name": "Hezee Access Management Software Suite",
+    "applicationCategory": "BusinessApplication",
+    "operatingSystem": "Web, Cloud",
+    "offers": {
+      "@type": "Offer",
+      "price": "0",
+      "priceCurrency": "INR",
+      "availability": "https://schema.org/InStock"
+    },
+    "aggregateRating": {
+      "@type": "AggregateRating",
+      "ratingValue": "4.8",
+      "ratingCount": "150"
+    }
+  }
+  </script>
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-WR76ZV7CCS"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+
+    gtag('config', 'G-WR76ZV7CCS');
+  </script>
+</head>
+
+<body>
+  <div id="root"></div>
+  <script type="module" src="/src/main.jsx"></script>
+</body>
+
 </html>

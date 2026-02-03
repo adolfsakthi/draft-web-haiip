@@ -48,7 +48,7 @@ const SmartOrbit = () => {
   };
 
   return (
-    <section className="relative flex justify-center bg-white py-24 overflow-hidden">
+    <section id="security-products" className="relative flex justify-center bg-white py-24 overflow-hidden">
       {/* DECOR IMAGE (Left) */}
       <img
         src="/slides/bluestar.png"
