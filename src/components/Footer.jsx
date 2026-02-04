@@ -22,52 +22,45 @@ export const Footer = () => {
                     background: 'linear-gradient(92.71deg, #0EA5E9 2.27%, #22D3EE 97.73%)'
                 }}
             >
-            <div
-                className="text-center w-full max-w-[1440px] px-6 md:px-20 py-16 md:py-24 flex flex-col justify-center items-center opacity-1"
-            >
+                <div
+                    className="text-center w-full max-w-[1440px] px-6 md:px-20 py-12 md:py-12 flex flex-col justify-center items-center opacity-1"
+                >
 
                     <h2
-                        className="text-white text-2xl md:text-4xl font-bold text-center mb-8 max-w-[900px]"
+                        className="text-white text-3xl md:text-4xl lg:text-5xl font-bold text-center mb-8"
                         style={{
                             fontFamily: 'Poppins',
                             lineHeight: '1.2',
-                            letterSpacing: '0%'
                         }}
                     >
-                        Transform Your Business with Hezee Smart Solutions
+                        Transform Your Business with <br className="hidden lg:block" /> Hezee Smart Solutions
                     </h2>
 
                     <p
-                        className="text-white text-base md:text-xl font-normal text-center mb-10 max-w-[850px]"
+                        className="text-white text-lg md:text-xl font-normal text-center mb-10 max-w-[850px] opacity-90"
                         style={{
                             fontFamily: 'Poppins',
-                            lineHeight: '1.5',
-                            letterSpacing: '0%'
+                            lineHeight: '1.6',
                         }}
                     >
-                        Powerful software and reliable hardware to automate operations, improve<br className="hidden md:block" />
+                        Powerful software and reliable hardware to automate operations, improve
                         productivity, and scale faster—without complexity.
                     </p>
 
                     <button
-                        className="bg-white text-black hover:bg-gray-100 transition-colors w-full max-w-[281px] h-14 rounded-lg font-semibold text-lg opacity-1"
+                        className="bg-white text-black hover:bg-gray-100 transition-all w-full md:max-w-[281px] h-16 rounded-2xl font-bold text-lg shadow-xl shadow-cyan-900/20 active:scale-95 mb-8"
                         style={{
                             fontFamily: 'Poppins',
-                            lineHeight: '28px',
-                            letterSpacing: '0%',
-                            textAlign: 'center',
-                            marginBottom: '24px'
                         }}
                     >
                         Get a Free Demo
                     </button>
 
                     <p
-                        className="text-white"
+                        className="text-white font-medium opacity-80"
                         style={{
                             fontFamily: 'Poppins',
                             fontSize: '16px',
-                            fontWeight: 400
                         }}
                     >
                         Talk to our team today
@@ -77,19 +70,16 @@ export const Footer = () => {
             </div>
 
             {/* MAIN FOOTER */}
-            <div className="bg-[#f7f9fc] pt-16 pb-8">
+            <div className="bg-[#f7f9fc] pt-20 pb-12">
                 <div className="max-w-[1440px] mx-auto px-6 lg:px-20">
 
                     {/* TOP GRID */}
-                    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-12 mb-12">
+                    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-12 lg:gap-8 mb-16">
 
                         {/* Brand + Social */}
-                        <div
-                            className="flex flex-col gap-6 lg:col-span-1 items-center md:items-start"
-                            style={{ opacity: 1 }}
-                        >
+                        <div className="flex flex-col gap-8 lg:col-span-3 items-center md:items-start">
                             {/* Logo Wrapper */}
-                            <div className="w-[214px]">
+                            <div className="w-[200px]">
                                 <img
                                     src="/footer/Frame 1261155073.png"
                                     alt="Hezee Access"
@@ -97,10 +87,12 @@ export const Footer = () => {
                                 />
                             </div>
 
+                            <p className="text-gray-500 text-sm md:text-base leading-relaxed text-center md:text-left max-w-xs" style={{ fontFamily: 'Poppins' }}>
+                                Delivering next-gen IT infrastructure and smart security solutions for modern businesses.
+                            </p>
+
                             {/* Social Icons Container */}
-                            <div
-                                className="w-[214px] h-8 flex items-center justify-between opacity-1"
-                            >
+                            <div className="flex items-center gap-4">
                                 <SocialIcon icon={Linkedin} />
                                 <SocialIcon icon={Twitter} />
                                 <SocialIcon icon={Facebook} />
@@ -109,33 +101,30 @@ export const Footer = () => {
                         </div>
 
                         {/* Company Column 1 */}
-                        <div className="lg:ml-20">
+                        <div className="lg:col-span-2 flex justify-center md:justify-start">
                             <FooterColumn title="Company" />
                         </div>
 
                         {/* Company Column 2 */}
-                        <div className="lg:ml-10">
+                        <div className="lg:col-span-2 flex justify-center md:justify-start">
                             <FooterColumn title="Solutions" />
                         </div>
 
                         {/* Company Column 3 */}
-                        <div className="lg:-ml-8">
+                        <div className="lg:col-span-2 flex justify-center md:justify-start">
                             <FooterColumn title="Resources" />
                         </div>
 
-                        <div className="lg:col-span-1 lg:-ml-20 flex flex-col gap-3 opacity-1">
+                        {/* Contact Column */}
+                        <div className="lg:col-span-3 flex flex-col gap-6 items-center md:items-start">
                             <h4
+                                className="text-slate-900 font-bold"
                                 style={{
                                     fontFamily: 'Nunito',
-                                    fontSize: '16px',
-                                    fontWeight: 700,
-                                    lineHeight: '24px',
-                                    letterSpacing: '0%',
-                                    color: '#0f172a',
-                                    margin: 0
+                                    fontSize: '18px',
                                 }}
                             >
-                                Contact
+                                Contact Us
                             </h4>
 
                             <ul className="space-y-4">

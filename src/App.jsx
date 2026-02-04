@@ -8,6 +8,7 @@ import VisitorManagement from './pages/VisitorManagement';
 import GymManagement from './pages/GymManagement';
 import HRManagement from './pages/HRManagement';
 import About from './pages/About';
+import Contact from './pages/Contact';
 import PrivacyPolicy from './pages/PrivacyPolicy';
 import ScrollToTop from './components/ScrollToTop';
 
@@ -25,7 +26,7 @@ function App() {
           <Route path="visitor-management" element={<VisitorManagement />} />
           <Route path="gym-management" element={<GymManagement />} />
           <Route path="about" element={<About />} />
-          <Route path="contact" element={<PrivacyPolicy />} />
+          <Route path="contact" element={<Contact />} />
           <Route path="privacy-policy" element={<PrivacyPolicy />} />
           <Route path="*" element={<div className="p-20 text-center text-red-500">Page not found</div>} />
         </Route>

@@ -7,9 +7,66 @@
   <!-- Homepage -->
   <url>
     <loc>https://hezee.co.in/</loc>
-    <lastmod>2026-02-02T10:30:00+05:30</lastmod>
+    <lastmod>2026-02-04T12:00:00+05:30</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
+
+  <!-- About Page -->
+  <url>
+    <loc>https://hezee.co.in/about</loc>
+    <lastmod>2026-02-04T12:00:00+05:30</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- HR Management -->
+  <url>
+    <loc>https://hezee.co.in/hr-management</loc>
+    <lastmod>2026-02-04T12:00:00+05:30</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- Gym Management -->
+  <url>
+    <loc>https://hezee.co.in/gym-management</loc>
+    <lastmod>2026-02-04T12:00:00+05:30</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- Hotel Management -->
+  <url>
+    <loc>https://hezee.co.in/hotel-management</loc>
+    <lastmod>2026-02-04T12:00:00+05:30</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- Visitor Management -->
+  <url>
+    <loc>https://hezee.co.in/visitor-management</loc>
+    <lastmod>2026-02-04T12:00:00+05:30</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- Contact Page -->
+  <url>
+    <loc>https://hezee.co.in/contact</loc>
+    <lastmod>2026-02-04T12:00:00+05:30</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <!-- Privacy Policy -->
+  <url>
+    <loc>https://hezee.co.in/privacy-policy</loc>
+    <lastmod>2026-02-04T12:00:00+05:30</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.3</priority>
+  </url>
   
 </urlset>
+

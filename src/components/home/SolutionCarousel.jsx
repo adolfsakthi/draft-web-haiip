@@ -15,7 +15,7 @@ const SolutionCarousel = () => {
   return (
     <section className="flex justify-center bg-white overflow-hidden pb-10">
       {/* SECTION FRAME */}
-      <div className="max-w-[1400px] w-full min-h-[380px] overflow-hidden px-4">
+      <div className=" w-full min-h-[380px] overflow-hidden px-4">
         {/* MARQUEE CONTAINER */}
         <div className="flex h-full gap-8 animate-marquee items-start pt-4">
           {[...solutionCards, ...solutionCards].map((card, idx) => {

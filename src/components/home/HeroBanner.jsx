@@ -18,14 +18,16 @@ const HeroBanner = () => {
           height: "auto",
           backgroundImage: "url('/banner.png')",
           backgroundSize: "cover",
-          backgroundPosition: "center",
+          backgroundPosition: "top center",
           backgroundRepeat: "no-repeat",
         }}
       >
         {/* Accent Lines Removed */}
 
         {/* Content */}
-        <div className="relative flex h-full w-full flex-col items-center justify-start pt-28 md:pt-44 text-center text-[#152033] px-4 md:px-6">
+        <div
+          className="relative flex h-full w-full flex-col items-center justify-start text-center text-[#152033] px-4 md:px-6 pt-32 md:pt-[17rem]"
+        >
 
 
           <h1
@@ -57,39 +59,29 @@ const HeroBanner = () => {
             technology for businesses.
           </p>
 
-          <div className="mt-8 mb-12 flex flex-col sm:flex-row items-center justify-center gap-4 md:gap-7 w-full sm:w-auto px-4">
+          <div className="mt-4 flex flex-col sm:flex-row items-center justify-center gap-6 md:gap-10 w-full sm:w-auto">
 
             {/* SOFTWARE BUTTON */}
-            <div className="p-1 rounded-[12px] border border-[#E2E8F0] bg-[#2F48580D] w-full sm:w-auto shadow-sm">
-              <div className="p-1 rounded-[12px] border border-[#E2E8F0] bg-[#2F48581A]">
-                <button
-                  className="flex items-center justify-center w-full sm:min-w-[280px] h-[46px] rounded-[8px] bg-[#99C331] px-4 py-2 text-white whitespace-nowrap transition hover:opacity-90 active:scale-95 shadow-sm text-lg md:text-[22px]"
-                  style={{
-                    fontFamily: "'Lato', sans-serif",
-                    fontWeight: 500,
-                    lineHeight: "100%",
-                    letterSpacing: "0%",
-                    gap: "10px"
-                  }}
-                >
+            {/* SOFTWARE BUTTON */}
+            <div className="bg-[rgba(47,72,88,0.1)] rounded-[8px] p-[10px] w-full sm:w-auto">
+              <div className="bg-[rgba(47,72,88,0.1)] rounded-[8px] p-[10px] w-full sm:w-auto">
+                <button className="w-full sm:w-auto rounded-xl bg-[#7DC242] px-8 py-4 text-base md:text-lg font-semibold text-white transition hover:-translate-y-1">
                   Explore Software Solutions
                 </button>
               </div>
             </div>
 
             {/* SECURITY BUTTON */}
-            <div className="p-1 rounded-[12px] border border-[#E2E8F0] bg-[#2F48580D] w-full sm:w-auto shadow-sm">
-              <div className="p-1 rounded-[12px] border border-[#E2E8F0] bg-[#2F48581A]">
+            <div className="bg-[rgba(47,72,88,0.1)] rounded-[8px] p-[10px] w-full sm:w-auto">
+              <div className="bg-[rgba(47,72,88,0.1)] rounded-[8px] p-[10px] w-full sm:w-auto">
                 <button
-                  className="flex items-center justify-center w-full sm:min-w-[280px] h-[46px] rounded-[8px] bg-[#2B2A4B] px-4 py-2 text-white whitespace-nowrap transition hover:opacity-90 active:scale-95 shadow-sm text-lg md:text-[22px]"
-                  style={{
-                    fontFamily: "'Lato', sans-serif",
-                    fontWeight: 500,
-                    lineHeight: "100%",
-                    letterSpacing: "0%",
-                    gap: "10px"
+                  onClick={() => {
+                    document.getElementById('security-products')?.scrollIntoView({
+                      behavior: 'smooth',
+                      block: 'start'
+                    });
                   }}
-                >
+                  className="w-full sm:w-auto rounded-xl bg-[rgba(43,42,75,1)] px-8 py-4 text-base md:text-lg font-semibold text-white transition hover:-translate-y-1">
                   Explore Security Products
                 </button>
               </div>

@@ -25,7 +25,7 @@ export default function Testimonials() {
       <div className="relative w-full max-w-[1440px] px-6 lg:px-20">
 
         {/* HEADER */}
-        <div className="relative z-10 flex flex-col lg:flex-row justify-between items-start mb-12 -mt-10 gap-8 lg:gap-0">
+        <div className="relative z-10 flex flex-col lg:flex-row justify-between items-start mb-12 -mt-10 gap-6 lg:gap-6">
 
           {/* LEFT TITLE */}
           <div className="flex items-center gap-4 lg:-ml-6">
@@ -92,7 +92,7 @@ export default function Testimonials() {
         />
 
         {/* TESTIMONIAL CARDS */}
-        <div className="mt-20 flex flex-col lg:flex-row justify-center items-center gap-10 lg:gap-16 relative">
+        <div className="mt-20 flex flex-col lg:flex-row justify-center items-center gap-6 lg:gap-6 relative">
 
           {testimonials.map((item, idx) => (
             <div

@@ -21,7 +21,7 @@ const stats = [
 const AboutUs = () => {
   return (
     <section className="flex justify-center bg-[#fafbff] py-24 md:py-36 -mt-20">
-      <div className="w-full max-w-[1440px] px-6 lg:px-20 overflow-hidden lg:overflow-visible">
+      <div className="w-full px-6 lg:px-20 overflow-hidden lg:overflow-visible">
 
         {/* TOP SECTION */}
         <div className="flex flex-col lg:flex-row justify-between items-start gap-12 lg:gap-0">

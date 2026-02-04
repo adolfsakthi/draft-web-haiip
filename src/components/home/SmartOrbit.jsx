@@ -5,28 +5,28 @@ import { Cpu, Download } from "lucide-react";
 // Precise positions relative to a 1000x600 container (percentages)
 const products = [
   // --- TOP CURVE ---
-  { id: 1, title: "Standalone Device", top: "10%", left: "22%" },
-  { id: 2, title: "Control Panel", top: "20%", left: "36%" },
-  { id: 3, title: "Reader", top: "24%", left: "56%" },
-  { id: 4, title: "Accessory", top: "12%", left: "75%" },
+  { id: 1, title: "Standalone Device", top: "15%", left: "22%" },
+  { id: 2, title: "Control Panel", top: "22%", left: "36%" },
+  { id: 3, title: "Reader", top: "23%", left: "56%" },
+  { id: 4, title: "Accessory", top: "16%", left: "77%" },
 
   // --- MIDDLE CURVE ---
-  { id: 5, title: "IP PTZ", top: "24%", left: "8%" },
+  { id: 5, title: "IP PTZ", top: "29%", left: "8%" },
   { id: 6, title: "Network Camera", top: "42%", left: "40%" },
-  { id: 7, title: "HD Analog Camera", top: "40%", left: "64%" },
-  { id: 8, title: "NVR", top: "28%", left: "88%" },
+  { id: 7, title: "HD Analog Camera", top: "42%", left: "64%" },
+  { id: 8, title: "NVR", top: "33%", left: "88%" },
 
   // --- LOWER CURVE ---
-  { id: 9, title: "Tripod Turnstile", top: "48%", left: "8%" },
-  { id: 10, title: "Flap Barrier", top: "62%", left: "28%" },
-  { id: 11, title: "Swing Barrier", top: "62%", left: "50%" },
-  { id: 12, title: "Optical Turnstile", top: "54%", left: "78%" },
+  { id: 9, title: "Tripod Turnstile", top: "54%", left: "8%" },
+  { id: 10, title: "Flap Barrier", top: "63%", left: "28%" },
+  { id: 11, title: "Swing Barrier", top: "67%", left: "50%" },
+  { id: 12, title: "Optical Turnstile", top: "62%", left: "78%" },
 
   // --- BOTTOM CURVE --- 
-  { id: 13, title: "Parking Barrier", top: "72%", left: "14%" },
+  { id: 13, title: "Parking Barrier", top: "76%", left: "14%" },
   { id: 14, title: "LPR", top: "84%", left: "38%" },
-  { id: 15, title: "Long Distance Reader", top: "78%", left: "68%" },
-  { id: 16, title: "Radar Sensor", top: "68%", left: "90%" },
+  { id: 15, title: "Long Distance Reader", top: "83%", left: "68%" },
+  { id: 16, title: "Radar Sensor", top: "74%", left: "93%" },
 ];
 
 const SmartOrbit = () => {
@@ -215,6 +215,10 @@ const SmartOrbit = () => {
             pointer-events-none
             z-20
           "
+        style={{
+          height: "19%",
+          right: "-38px"
+        }}
       />
     </section>
   );

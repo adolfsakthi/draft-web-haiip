@@ -35,17 +35,17 @@ const FAQSection = () => {
       <div className="relative w-full max-w-[1440px] px-6 lg:px-20">
 
         {/* HEADER */}
-        <div className="relative z-10 flex flex-col lg:flex-row justify-between items-start mb-16 -mt-10 gap-8 lg:gap-0">
+        <div className="relative z-10 flex flex-col md:flex-row justify-between items-center mb-16 gap-8">
 
           {/* LEFT TITLE */}
-          <div className="flex items-center gap-4 lg:-ml-6">
+          <div className="flex items-center gap-4">
             <img
               src="/Star.png"
               alt="star"
-              className="w-14 h-14 object-contain"
+              className="w-10 h-10 lg:w-14 lg:h-14 object-contain"
             />
             <h2
-              className="text-5xl font-normal text-black"
+              className="text-4xl lg:text-[56px] font-normal text-black"
               style={{ fontFamily: 'Zen Dots, sans-serif' }}
             >
               FAQ's
@@ -53,27 +53,23 @@ const FAQSection = () => {
           </div>
 
           {/* RIGHT TAGLINE */}
-          <div className="relative flex max-w-2xl gap-5 mt-14 lg:ml-32">
-
+          <div className="flex items-center gap-5">
             {/* Vertical Accent Line */}
             <div
+              className="hidden md:block"
               style={{
-                width: '3px',
-                height: '36px',
-                opacity: 1,
+                width: '1.5px',
+                height: '32px',
                 background: 'linear-gradient(225deg, #F76680 0%, #57007B 100%)'
               }}
             />
 
             {/* Gradient Subtitle */}
             <p
+              className="italic text-lg lg:text-2xl"
               style={{
                 fontFamily: 'Poppins',
                 fontWeight: 500,
-                fontStyle: 'italic',
-                fontSize: '24px',
-                lineHeight: '100%',
-                letterSpacing: '0%',
                 background: 'linear-gradient(225deg, #F76680 0%, #57007B 100%)',
                 WebkitBackgroundClip: 'text',
                 WebkitTextFillColor: 'transparent',
@@ -83,69 +79,42 @@ const FAQSection = () => {
               Your questions, our answers
             </p>
           </div>
-
         </div>
 
         {/* FAQ LIST */}
-        <div className="space-y-0 mt-12">
+        <div className="w-full max-w-[1280px] mx-auto space-y-4">
 
           {faqs.map((item, idx) => {
             const isOpen = openIndex === idx;
 
             return (
               <div key={idx}>
-
-                {/* OPEN FAQ */}
                 {isOpen ? (
+                  /* OPEN FAQ */
                   <div
+                    className="w-full bg-white shadow-[0_30px_60px_rgba(0,0,0,0.08)] border border-pink-50/50 p-6 md:p-12 transition-all duration-300"
                     style={{
-                      width: '1280px',
-                      padding: '8.83px 17.66px 17.66px 17.66px',
-                      gap: '17.66px',
-                      borderRadius: '17.66px',
-                      backgroundColor: '#fff',
+                      borderRadius: '40px',
                       opacity: 1
                     }}
                   >
-
                     {/* QUESTION ROW */}
-                    <div
-                      style={{
-                        display: 'flex',
-                        justifyContent: 'space-between',
-                        alignItems: 'start',
-                        padding: '8.83px 0',
-                        marginBottom: '17.66px'
-                      }}
-                    >
+                    <div className="flex justify-between items-start mb-8">
                       <h3
+                        className="text-lg md:text-2xl"
                         style={{
                           fontFamily: 'Poppins',
-                          fontWeight: 400,
-                          fontSize: '24px',
-                          lineHeight: '100%',
-                          letterSpacing: '0%',
-                          color: '#000'
+                          fontWeight: 500,
+                          lineHeight: '1.2',
+                          color: '#b91c7f'
                         }}
                       >
                         {item.q}
                       </h3>
                       <button
                         onClick={() => setOpenIndex(null)}
-                        style={{
-                          width: '36.78px',
-                          height: '36.78px',
-                          opacity: 1,
-                          display: 'flex',
-                          alignItems: 'center',
-                          justifyContent: 'center',
-                          border: 'none',
-                          background: 'transparent',
-                          cursor: 'pointer',
-                          fontSize: '24px',
-                          color: '#000'
-                        }}
-                        className="hover:opacity-70 transition-opacity"
+                        className="w-8 h-8 md:w-10 md:h-10 flex items-center justify-center rounded-full bg-pink-50 text-2xl font-light hover:bg-pink-100 transition-colors"
+                        style={{ color: '#b91c7f' }}
                       >
                         ×
                       </button>
@@ -153,13 +122,12 @@ const FAQSection = () => {
 
                     {/* ANSWER */}
                     <p
+                      className="text-base md:text-lg"
                       style={{
                         fontFamily: 'Poppins',
                         fontWeight: 400,
-                        fontSize: '20.91px',
-                        lineHeight: '100%',
-                        letterSpacing: '0%',
-                        color: '#444'
+                        lineHeight: '1.8',
+                        color: '#475569'
                       }}
                     >
                       {item.a}
@@ -168,54 +136,31 @@ const FAQSection = () => {
                 ) : (
                   /* CLOSED FAQ */
                   <div
-                    style={{
-                      width: '1280px',
-                      display: 'flex',
-                      justifyContent: 'space-between',
-                      alignItems: 'center',
-                      padding: '17.66px 0',
-                      borderBottom: '0.74px solid #000',
-                      cursor: 'pointer',
-                      opacity: 1
-                    }}
-                    className="hover:opacity-70 transition-opacity"
+                    className="w-full flex justify-between items-center py-6 border-b border-gray-300 md:border-black/10 cursor-pointer hover:bg-gray-50/50 transition-all duration-300"
                     onClick={() => setOpenIndex(idx)}
                   >
                     <h3
+                      className="text-lg md:text-2xl"
                       style={{
                         fontFamily: 'Poppins',
                         fontWeight: 400,
-                        fontSize: '24px',
-                        lineHeight: '100%',
-                        letterSpacing: '0%',
                         color: '#000'
                       }}
                     >
                       {item.q}
                     </h3>
                     <span
-                      style={{
-                        width: '36.78px',
-                        height: '36.78px',
-                        opacity: 1,
-                        display: 'flex',
-                        alignItems: 'center',
-                        justifyContent: 'center',
-                        fontSize: '24px',
-                        color: '#000'
-                      }}
+                      className="w-8 h-8 md:w-10 md:h-10 flex items-center justify-center text-3xl font-light"
+                      style={{ color: '#000' }}
                     >
                       +
                     </span>
                   </div>
                 )}
-
               </div>
             );
           })}
-
         </div>
-
       </div>
     </section>
   );

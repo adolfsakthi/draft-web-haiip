@@ -186,7 +186,7 @@ const WhatWeDeliver = () => {
         </div>
 
         {/* LEFT BOTTOM DOT DECORATION (Hidden on mobile) */}
-        <div className="hidden lg:grid absolute bottom-20 -left-4 grid-cols-3 grid-rows-8 gap-3">
+        <div className="hidden lg:grid absolute bottom-22 left-0 md:left-[-2rem] grid-cols-3 grid-rows-[repeat(8,minmax(0,1fr))] gap-3">
           {Array.from({ length: 24 }).map((_, idx) => (
             <span key={idx} className="h-2 w-2 rounded-full bg-[#DDEFE4]" />
           ))}
