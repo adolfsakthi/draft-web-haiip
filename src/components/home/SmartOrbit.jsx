@@ -26,7 +26,7 @@ const products = [
   { id: 13, title: "Video Door Phones", top: "76%", left: "14%", file: "Video_Door.png" },
   { id: 14, title: "LPR", top: "84%", left: "38%", file: "LPR.png" },
   { id: 15, title: "Long Distance Reader", top: "83%", left: "68%", file: "Long_Distance_Camera.png" },
-  { id: 16, title: "Radar Sensor", top: "74%", left: "93%", file: "Hotel_Door.png" },
+  { id: 16, title: "Hotel Door Sensor", top: "74%", left: "93%", file: "Hotel_Door.png" },
 ];
 
 const SmartOrbit = () => {
