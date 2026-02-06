@@ -5,32 +5,31 @@ import { Cpu, Download } from "lucide-react";
 // Precise positions relative to a 1000x600 container (percentages)
 const products = [
   // --- TOP CURVE ---
-  { id: 1, title: "Standalone Device", top: "15%", left: "22%" },
-  { id: 2, title: "Control Panel", top: "22%", left: "36%" },
-  { id: 3, title: "Reader", top: "23%", left: "56%" },
-  { id: 4, title: "Accessory", top: "16%", left: "77%" },
+  { id: 1, title: "Standalone Device", top: "15%", left: "22%", file: "Stand_Alone_Device.png" },
+  { id: 2, title: "Control Panel", top: "22%", left: "36%", file: "Control_Pannel.png" },
+  { id: 3, title: "Reader", top: "23%", left: "56%", file: "Reader.png" },
+  { id: 4, title: "Accessory", top: "16%", left: "77%", file: "Accessories.png" },
 
   // --- MIDDLE CURVE ---
-  { id: 5, title: "IP PTZ", top: "29%", left: "8%" },
-  { id: 6, title: "Network Camera", top: "42%", left: "40%" },
-  { id: 7, title: "HD Analog Camera", top: "42%", left: "64%" },
-  { id: 8, title: "NVR", top: "33%", left: "88%" },
+  { id: 5, title: "IP PTZ", top: "29%", left: "8%", file: "IP_PTZ.png" },
+  { id: 6, title: "Network Camera", top: "42%", left: "40%", file: "Network_Cameras.png" },
+  { id: 7, title: "HD Analog Camera", top: "42%", left: "64%", file: "HD_Anolog_Cameras.png" },
+  { id: 8, title: "NVR", top: "33%", left: "88%", file: "DVR_NVR.png" },
 
   // --- LOWER CURVE ---
-  { id: 9, title: "Tripod Turnstile", top: "54%", left: "8%" },
-  { id: 10, title: "Flap Barrier", top: "63%", left: "28%" },
-  { id: 11, title: "Swing Barrier", top: "67%", left: "50%" },
-  { id: 12, title: "Optical Turnstile", top: "62%", left: "78%" },
+  { id: 9, title: "Tripod Turnstile", top: "54%", left: "8%", file: "Turnstile.png" },
+  { id: 10, title: "Flap Barrier", top: "63%", left: "28%", file: "Falp_Barrier.png" },
+  { id: 11, title: "Boom Barrier", top: "67%", left: "50%", file: "Boom_Barriers.png" },
+  { id: 12, title: "Optical Turnstile", top: "62%", left: "78%", file: "Turnstile.png" },
 
   // --- BOTTOM CURVE --- 
-  { id: 13, title: "Parking Barrier", top: "76%", left: "14%" },
-  { id: 14, title: "LPR", top: "84%", left: "38%" },
-  { id: 15, title: "Long Distance Reader", top: "83%", left: "68%" },
-  { id: 16, title: "Radar Sensor", top: "74%", left: "93%" },
+  { id: 13, title: "Parking Barrier", top: "76%", left: "14%", file: "" },
+  { id: 14, title: "LPR", top: "84%", left: "38%", file: "LPR.png" },
+  { id: 15, title: "Long Distance Reader", top: "83%", left: "68%", file: "Long_Distance_Camera.png" },
+  { id: 16, title: "Radar Sensor", top: "74%", left: "93%", file: "" },
 ];
 
 const SmartOrbit = () => {
-
   const [isMobile, setIsMobile] = React.useState(false);
 
   React.useEffect(() => {
@@ -42,9 +41,30 @@ const SmartOrbit = () => {
     return () => window.removeEventListener("resize", handleResize);
   }, []);
 
-  const handleDownload = (title) => {
-    // precise-ui-response
-    alert(`Downloading ${title} Datasheet...`);
+  const handleDownload = (e, file, title) => {
+    if (e) {
+      e.preventDefault();
+      e.stopPropagation();
+    }
+
+    if (file) {
+      try {
+        const link = document.createElement('a');
+        link.href = `/datasheets/${file}`;
+        link.setAttribute('download', file);
+        link.style.display = 'none';
+        document.body.appendChild(link);
+        link.click();
+        setTimeout(() => {
+          document.body.removeChild(link);
+        }, 100);
+      } catch (err) {
+        console.error("Download failed:", err);
+        window.open(`/datasheets/${file}`, '_blank');
+      }
+    } else {
+      alert(`Datasheet for ${title} will be available soon!`);
+    }
   };
 
   return (
@@ -162,7 +182,7 @@ const SmartOrbit = () => {
                   left: item.left,
                   transform: "translate(-50%, -50%)",
                 } : {}}
-                onClick={() => handleDownload(item.title)}
+                onClick={(e) => handleDownload(e, item.file, item.title)}
               >
                 {/* ICON CIRCLE */}
                 {/* Using a light blue glowing circle effect similar to image */}
@@ -192,9 +212,16 @@ const SmartOrbit = () => {
                 </div>
 
                 {/* LABEL */}
-                <span className="mt-3 text-sm font-semibold text-[#1a1a1a] text-center whitespace-nowrap bg-white/60 backdrop-blur-sm px-2 py-0.5 rounded-lg">
-                  {item.title}
-                </span>
+                <div className="mt-3 flex flex-col items-center">
+                  <span className="text-sm font-semibold text-[#1a1a1a] text-center whitespace-nowrap bg-white/60 backdrop-blur-sm px-2 py-0.5 rounded-lg">
+                    {item.title}
+                  </span>
+                  {item.file && (
+                    <span className="text-[10px] text-blue-500 font-bold opacity-0 group-hover:opacity-100 transition-opacity mt-1">
+                      Download Datasheet
+                    </span>
+                  )}
+                </div>
 
               </div>
             ))}
