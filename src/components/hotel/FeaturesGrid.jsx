@@ -22,23 +22,33 @@ const features = [
 const FeaturesGrid = () => (
     <section className="bg-white py-20">
         <div className="max-w-[1280px] mx-auto px-6">
-            <div className="grid grid-cols-4 grid-rows-2">
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4">
                 {features.map((f, i) => {
-                    const lastCol = (i + 1) % 4 === 0
-                    const bottomRow = i >= 4
+                    const isLastMobile = i === features.length - 1;
+                    const isRightEdgeTablet = (i + 1) % 2 === 0;
+                    const isBottomEdgeTablet = i >= features.length - 2;
+                    const isRightEdgeDesktop = (i + 1) % 4 === 0;
+                    const isBottomEdgeDesktop = i >= features.length - 4;
 
                     return (
                         <div
                             key={i}
                             className={`
-                                w-[320px] h-[210px]
-                                px-3 pt-4 pb-6
+                                py-12 px-4
                                 flex flex-col items-center text-center gap-6
-                                ${!lastCol && "border-r border-pink-400"}
-                                ${!bottomRow && "border-b border-pink-400"}
+                                border-pink-400
+                                border-0
+                                /* Mobile */
+                                ${!isLastMobile ? 'border-b' : ''}
+                                /* Tablet */
+                                ${!isRightEdgeTablet ? 'sm:border-r' : 'sm:border-r-0'}
+                                ${!isBottomEdgeTablet ? 'sm:border-b' : 'sm:border-b-0'}
+                                /* Desktop */
+                                ${!isRightEdgeDesktop ? 'lg:border-r' : 'lg:border-r-0'}
+                                ${!isBottomEdgeDesktop ? 'lg:border-b' : 'lg:border-b-0'}
                             `}
                         >
-                            <img src={f.icon} alt="" className="w-12 h-12" />
+                            <img src={f.icon} alt={f.title} className="w-12 h-12" />
                             <h3 className="font-semibold text-lg">{f.title}</h3>
                             <p className="text-sm text-gray-500 max-w-[240px]">
                                 {f.desc}

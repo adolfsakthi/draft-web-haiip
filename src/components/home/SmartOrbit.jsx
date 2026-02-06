@@ -1,5 +1,5 @@
 import React from "react";
-import { Cpu, Download } from "lucide-react";
+import { Cpu, Download, X, Eye } from "lucide-react";
 
 // Product Data - 16 Items
 // Precise positions relative to a 1000x600 container (percentages)
@@ -23,14 +23,15 @@ const products = [
   { id: 12, title: "Optical Turnstile", top: "62%", left: "78%", file: "Turnstile.png" },
 
   // --- BOTTOM CURVE --- 
-  { id: 13, title: "Video Door Phones", top: "76%", left: "14%", file: "Video_Door.png" },
+  { id: 13, title: "Video Door Phones", top: "76%", left: "14%", file: "Video_Door.jpeg" },
   { id: 14, title: "LPR", top: "84%", left: "38%", file: "LPR.png" },
   { id: 15, title: "Long Distance Reader", top: "83%", left: "68%", file: "Long_Distance_Camera.png" },
-  { id: 16, title: "Hotel Door Sensor", top: "74%", left: "93%", file: "Hotel_Door.png" },
+  { id: 16, title: "Hotel Door Sensor", top: "74%", left: "93%", file: "Hotel_Door.jpeg" },
 ];
 
 const SmartOrbit = () => {
   const [isMobile, setIsMobile] = React.useState(false);
+  const [selectedProduct, setSelectedProduct] = React.useState(null);
 
   React.useEffect(() => {
     const handleResize = () => {
@@ -64,6 +65,14 @@ const SmartOrbit = () => {
       }
     } else {
       alert(`Datasheet for ${title} will be available soon!`);
+    }
+  };
+
+  const handleProductClick = (item) => {
+    if (item.file) {
+      setSelectedProduct(item);
+    } else {
+      alert(`Preview for ${item.title} will be available soon!`);
     }
   };
 
@@ -182,7 +191,7 @@ const SmartOrbit = () => {
                   left: item.left,
                   transform: "translate(-50%, -50%)",
                 } : {}}
-                onClick={(e) => handleDownload(e, item.file, item.title)}
+                onClick={() => handleProductClick(item)}
               >
                 {/* ICON CIRCLE */}
                 {/* Using a light blue glowing circle effect similar to image */}
@@ -205,9 +214,9 @@ const SmartOrbit = () => {
                 >
                   <Cpu size={28} strokeWidth={1.5} />
 
-                  {/* Download Badge (Hover) */}
+                  {/* Preview/Eye Badge (Hover) */}
                   <div className="absolute -top-2 -right-2 bg-black text-white p-1 rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-300 scale-75 shadow-md">
-                    <Download size={10} />
+                    <Eye size={10} />
                   </div>
                 </div>
 
@@ -218,7 +227,7 @@ const SmartOrbit = () => {
                   </span>
                   {item.file && (
                     <span className="text-[10px] text-blue-500 font-bold opacity-0 group-hover:opacity-100 transition-opacity mt-1">
-                      Download Datasheet
+                      View Flyer
                     </span>
                   )}
                 </div>
@@ -247,6 +256,56 @@ const SmartOrbit = () => {
           right: "-38px"
         }}
       />
+
+      {/* ================= PREVIEW MODAL ================= */}
+      {selectedProduct && (
+        <div
+          className="fixed inset-0 z-[200] flex items-center justify-center bg-black/80 backdrop-blur-sm p-4 animate-in fade-in duration-300"
+          onClick={() => setSelectedProduct(null)}
+        >
+          <div
+            className="relative bg-white rounded-2xl shadow-2xl max-w-4xl w-full max-h-[90vh] flex flex-col overflow-hidden animate-in zoom-in-95 duration-300"
+            onClick={(e) => e.stopPropagation()}
+          >
+            {/* Modal Header */}
+            <div className="p-4 border-b flex justify-between items-center bg-gray-50">
+              <h3 className="text-xl font-bold text-gray-800 font-poppins">
+                {selectedProduct.title} - Flyer Preview
+              </h3>
+              <div className="flex items-center gap-3">
+                <button
+                  onClick={(e) => handleDownload(e, selectedProduct.file, selectedProduct.title)}
+                  className="flex items-center gap-2 bg-[#1a2b88] text-white px-4 py-2 rounded-lg font-semibold hover:bg-[#15226e] transition-all active:scale-95"
+                >
+                  <Download size={12} />
+                  Download
+                </button>
+                <button
+                  onClick={() => setSelectedProduct(null)}
+                  className="p-2 hover:bg-gray-200 rounded-full transition-colors text-gray-500"
+                >
+                  <X size={24} />
+                </button>
+              </div>
+            </div>
+
+            {/* Modal Content (Image Preview) */}
+            <div className="flex-1 overflow-auto bg-gray-100 p-2 flex justify-center items-start">
+              <img
+                src={`/datasheets/${selectedProduct.file}`}
+                alt={selectedProduct.title}
+                className="max-w-full h-auto shadow-lg rounded-sm"
+                onContextMenu={(e) => e.preventDefault()} // Basic protection
+              />
+            </div>
+
+            {/* Modal Footer */}
+            <div className="p-3 bg-white border-t text-center text-gray-400 text-xs italic">
+              Click outside the flyer to close this preview.
+            </div>
+          </div>
+        </div>
+      )}
     </section>
   );
 };

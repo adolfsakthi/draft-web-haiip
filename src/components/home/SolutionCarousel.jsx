@@ -5,7 +5,7 @@ const solutionCards = [
   { title: "HRMS cum Payroll Management System", image: "/card/payroll.png", path: "/hr-management" },
   { title: "Leave Management System", image: "/card/leave.jpg", path: "/leave-management" },
   { title: "Hotel Management System", image: "/card/hotel.png", path: "/hotel-management" },
-  { title: "Canteen Management System", image: "/card/cateen.png", path: "/canteen-management" },
+  { title: "Canteen Management System", image: "/card/cateen.png" },
   { title: "GYM Management System", image: "/card/gym.png", path: "/gym-management" },
   { title: "Campus Management System", image: "/card/campus.jpg", path: "/campus-management" },
   { title: "Visitor Management System", image: "/card/visitor.jpg", path: "/visitor-management" },
